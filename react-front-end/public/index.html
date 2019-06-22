@@ -27,6 +27,48 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+  </div>
+    
+  <div class = "parents">
+    <div class="user-bar">Users
+    <div class="user-layout">
+      <p class="user1">User 1</p>
+      <p class="user2">User 2</p>
+    </div>
+</div>
+    <div class="video-bar">Video
+      <h4>Video Title</h4>
+      <div class="search-field">
+        <form action="http://www.youtube.com/results" method="get" target="_blank">
+          <input name="search_query" type="text" maxlength="128" />
+          <!-- <select name="search_type">
+          <option value="">Videos</option>
+          <option value="search_users">Channels</option>
+          </select> -->
+          <input type="submit" value="Search" />
+        </form> 
+      </div>
+      <div class="video-box">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4OLJe8iMLg4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+      </div>
+      <div class="chat-bar"><div className="message">
+          <main class ='messages'>
+            <span className="message-username">user123 :</span>
+            <span className="message-content"> Hi there how are you</span>
+            <br>
+            <span className="message-username">user123 : </span>
+            <span className="message-content"> Hi there how are you</span>
+          </main>
+          <footer className="chatbar">
+            <input class="chatbar-message" id = 'chatbar-msg'placeholder="Type a message and hit ENTER" onKeyPress  />
+            <button class="send-button"  >send</button>
+          </footer>
+      </div></div>
+    </div>
+  </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
