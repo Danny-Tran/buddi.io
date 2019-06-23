@@ -1,5 +1,11 @@
+import _ from 'lodash';
+
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
 import axios from 'axios';
+import SearchBar from './components/search-bar';
+import VideoDetail from './components/video-detail';
+const API_KEY = 'AIzaSyBV7rOg-k0NIr7__-LRO_Wz7WVGbF3Dmfw';
 import './App.css';
 
 class App extends Component {
