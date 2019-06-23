@@ -14,7 +14,7 @@ class VideoListItem extends Component {
 
     return (
       <div onClick={() => this.onVideoSelect(this.video)} className="list-group-item">
-        <div className="video-list media">
+        <div className="video-list-media">
           <div className="media-left">
             <img className="media-object" src={imgUrl} />
           </div>
