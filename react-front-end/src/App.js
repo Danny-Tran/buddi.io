@@ -10,6 +10,22 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log("componentDidMount <App />");
+    this.socket = new WebSocket("ws://localhost:3001/")
+
+    this.socket.onopen = () => {
+      // on connecting, do nothing but log it to the console
+      console.log('connected to the server')
+    }
+    this.socket.onmessage = (event) =>{
+      console.log(event)
+    }
+  }
+  
+
+
+
   fetchData = () => {
     axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
