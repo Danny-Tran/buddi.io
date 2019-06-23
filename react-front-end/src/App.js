@@ -1,14 +1,15 @@
 import _ from 'lodash';
 
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
 import axios from 'axios';
 import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/search-bar';
 import VideoDetail from './components/video-detail';
-const API_KEY = 'AIzaSyBV7rOg-k0NIr7__-LRO_Wz7WVGbF3Dmfw';
 import './App.css';
+const API_KEY = 'AIzaSyBV7rOg-k0NIr7__-LRO_Wz7WVGbF3Dmfw';
+
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
       selectedVideo: null
     }
 
-    this.videoSearch('react js');
+    this.videoSearch('movies');
   }
 
   videoSearch(term) {
@@ -48,10 +49,12 @@ class App extends Component {
     const videoSearch = _.debounce(term => {
       this.videoSearch(term);
     }, 300);
-    
+
     return (
-      <div className="App">
-                
+      
+      <div>
+        <h5> Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
+        <VideoDetail video={this.state.selectedVideo} />
       </div>
     );
   }
