@@ -7,8 +7,9 @@ import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/search-bar';
 import VideoDetail from './components/video-detail';
+import VideoList from './components/video-list';
 import './App.css';
-const API_KEY = 'AIzaSyBV7rOg-k0NIr7__-LRO_Wz7WVGbF3Dmfw';
+const API_KEY = 'AIzaSyDDs2Azi93CNPcrKMZzefTEF0MLGjDNRhA';
 
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
       selectedVideo: null
     }
 
-    this.videoSearch('movies');
+    this.videoSearch('Silicon Valley');
   }
 
   videoSearch(term) {
@@ -51,10 +52,12 @@ class App extends Component {
     }, 300);
 
     return (
-      
       <div>
-        <h5> Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
+        <SearchBar onSearchTermChange={videoSearch}/>
         <VideoDetail video={this.state.selectedVideo} />
+        <VideoList 
+            onVideoSelect={selectedVideo => this.setState({selectedVideo})} 
+            videos={this.state.videos} />
       </div>
     );
   }
