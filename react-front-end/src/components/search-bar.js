@@ -9,10 +9,12 @@ class SearchBar extends Component {
     }
 
     render() {
-        return (<div className="search-bar">
-                <i className="fa fa-search" aria-hidden="true"></i>
-                <input onChange={this.onInputChange}/>    
-            </div>)
+      return (
+        <div className="search-bar">
+          <i className="fa fa-search" aria-hidden="true"></i>
+          <input onChange={this.onInputChange}/>    
+        </div>
+      );
     }
 
     onInputChange(event) {
