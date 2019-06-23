@@ -11,7 +11,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <i class="fa fa-youtube-play" ></i>
+        <img src="./youtube-icon.png" alt="youtube logo"/>
         <input onChange={this.onInputChange}/>    
         <i className="fa fa-search" aria-hidden="true"></i>
       </div>

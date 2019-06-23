@@ -74,12 +74,18 @@ border-radius: 2em;
 .search-bar {
   margin: 20px;
   padding-left: 20px;
+  border:1px solid grey;
 }
 
 .search-bar input {
   margin: 10px;
   height: 30px;
-  width: 200px;
+  width: 500px;
+}
+
+.search-bar img {
+  width: 35px;
+  height: 35px;
 }
 
 .video-list-media {
