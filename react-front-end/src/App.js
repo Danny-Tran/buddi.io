@@ -26,7 +26,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="chat-bar" class="chat-bar"> <Chat_bar/>
+      <div className="chat-bar" class="chat-bar"> 
+      <Chat_bar/>
                 
       </div>
     );

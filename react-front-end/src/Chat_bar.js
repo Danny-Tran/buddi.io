@@ -41,7 +41,7 @@ render(){
               <div className="col-4">
                   <div className="card">
                       <div className="card-body">
-                          <div className="card-title">Global Chat</div>
+                          <div className="card-title">Chat Room 1 Messages</div>
                           <hr/>
                           <div className="messages">
                               {this.state.messages.map(message => {
