@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Webcam height={200} />
+          <Webcam height={200}width={200}/>
       </div>
     );
   }
