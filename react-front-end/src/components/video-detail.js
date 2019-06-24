@@ -14,7 +14,7 @@ class VideoDetail extends Component {
 
   render() {
     if (!this.state) {
-        return <div>Video loading ...</div>
+      return <div>Video loading ...</div>
     }
     const title = this.state.snippet.title
     const description = this.state.snippet.description
@@ -23,13 +23,13 @@ class VideoDetail extends Component {
 
     return (
         <div className="video-detail col-md-8">
-            <div className="embed-responsive embed-responsive-21by9">
-                <iframe className="embed-responsive-item" src={videoUrl}></iframe>
-            </div>
-            <div className="details">
-                <div className="title">{title}</div>
-                <div className="desc">{description}</div>
-            </div>
+          <div className="embed-responsive embed-responsive-21by9">
+            <iframe className="embed-responsive-item" src={videoUrl} width="700" height="450"></iframe>
+          </div>
+          <div className="details">
+            <div className="title">{title}</div>
+            <div className="desc">{description}</div> -->
+          </div>
         </div>
     )
   }
