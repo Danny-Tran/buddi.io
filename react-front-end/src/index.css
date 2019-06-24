@@ -70,3 +70,33 @@ background-color: white;
 /* height: 3em; */
 border-radius: 2em;
 }
+
+.search-bar {
+  margin: 20px;
+  padding-left: 20px;
+  border:1px solid grey;
+}
+
+.search-bar input {
+  margin: 10px;
+  height: 30px;
+  width: 500px;
+}
+
+.search-bar img {
+  width: 35px;
+  height: 35px;
+}
+
+.video-list-media {
+  margin: 40px;
+}
+
+/*.video-detail {
+  margin: 40px;
+}*/
+
+.fa fa-youtube-play {
+  font-size:48px;
+  color:red
+}
