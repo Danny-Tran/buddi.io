@@ -42,7 +42,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    this.videoSearch('Silicon Valley');
+    this.videoSearch('trailer');
   }
 
   videoSearch = (term) => {
