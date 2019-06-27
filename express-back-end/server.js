@@ -16,11 +16,21 @@ io.on('connection',(socket) =>{
     io.emit('RECEIVE_MESSAGE', data);
   })
 
-  socket.on('state', (data) =>{
+  socket.on('state', (data) => {
   	
   	socket.broadcast.emit('onPause', data);
   	console.log('FROM BACKEND', data);
   })
+
+  // socket.on('youtube_onPlay', (data) => {
+  //   socket.broadcast.emit('youtube_playVideo', data);
+  // 	console.log('Listening to PLAY');
+  // });
+
+  // socket.on('youtube_onPause', (data) => {
+  //   socket.broadcast.emit('youtube_pauseVideo', data)
+  //   console.log('Listening to PAUSE');
+  // });
 
 })
 

@@ -46,7 +46,9 @@ class Example extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      id: this.props.video && this.props.video.id.videoId
+      id: this.props.video && this.props.video.id.videoId,
+      // onPlay: this.props.video
+
     }
 
     this.socket = io('localhost:8080');
@@ -55,7 +57,17 @@ class Example extends React.Component {
       console.log("received", typeof data, data)
       this.setState({id: data.id})
     })
-    // this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this)
+
+    this.socket.on('youtube_onPlay', (data) => {
+      this.setState({data})
+      console.log("ONPLAY FROM VIDEO DETAIL", data)
+    })
+
+    this.socket.on('youtube_onPause', (data) => {
+      this.setState('youtube_playVideo', data)
+      // this.socket.emit('youtube_playVideo', data)
+      console.log("ONPLAY FROM VIDEO DETAIL", data)
+    })
 
   }
 
@@ -69,8 +81,8 @@ class Example extends React.Component {
 
   render() {
     const opts = {
-      height: '390',
-      width: '690',
+      height: '450',
+      width: '810',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 0
       }
@@ -101,31 +113,25 @@ class Example extends React.Component {
         videoId={this.state.id}
         opts={opts}
         onReady={this._onReady}
-        onPlay={(play) => console.log("ONPLAY", play)}
+        // onPlay={(play) => console.log("ONPLAY", play)}
+        // onPlay={this._onPlay}
         />
       
     );
+
   }
- 
+  // _onPlay = (event) => {
+
+  //   event.target.playVideo();
+  //   console.log("Play event", event)
+  // }
+
   _onReady = (event) => {
-    // access to player in all event handlers via event.target
-      // this.socket.emit('state', {id: this.props.video.id.videoId}) 
+    event.target.playVideo();
+    console.log("Play event", event)
+
     event.target.pauseVideo();
-    // this.socket.on('onPause', function(data){
-    //   console.log("received", typeof data, data)
-    //   this.setState({id: data.id})
-    // })
     console.log("EVENT",this.props.video.id.videoId)
-        // (<div className="video-detail_col-md-8">
-        //   <div className="embed-responsive_embed-responsive-21by9">
-        //     <iframe className="embed-responsive-item" src={videoUrl} ></iframe>
-        //   </div>
-        //   <div className="details">
-        //     <div className="title"><strong><h3>{title}</h3></strong></div>
-        //     <div className="desc">{description}</div>
-        //   </div>
-        // </div>)
-    
   }
 }
 

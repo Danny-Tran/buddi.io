@@ -13,7 +13,7 @@ import VideoList from './components/video-list';
 import './App.css';
 import Chat_bar from "./Chat_bar.js";
 
-const API_KEY = 'AIzaSyAWozCjsQeq44RvaA-VPapn7tEb46ESRHY';
+const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
 class App extends Component {
   constructor(props) {
@@ -77,31 +77,28 @@ class App extends Component {
 
     return (
       <div className="appContainer">
-        <div class="nav-bar">
+        <div className="nav-bar">
         <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
         <SearchBar onSearchTermChange={this.debounceSearch}/>
         </div>
 
-        <div class = "parents">
-          <div class="user-bar">Users
-            <div class="user-layout">
-              <div class="webcam"></div>
-              <p class="user1">User 1</p>
-              <p class="user2">User 2</p>
+        <div className = "parents">
+          <div className="user-bar">Users
+            <div className="user-layout">
+              <div className="webcam"></div>
+              <p className="user1">User 1</p>
+              <p className="user2">User 2</p>
             </div>
           </div>
       
-        <div class="video-bar">
-        <div class="embed-responsive-item">
+        <div className="video-bar">
+        <div className="embed-responsive-item">
           <VideoDetail video={this.state.selectedVideo} />
         </div>
-          <VideoList 
-              onVideoSelect={selectedVideo => this.setState({selectedVideo})} 
-              videos={this.state.videos} 
-          />
+          
         </div>
 
-        <div role="complimentary" className="chat-bar" class="chat-bar"> 
+        <div role="complimentary" className="chat-bar" > 
           <Chat_bar/>
         </div>         
       </div>
