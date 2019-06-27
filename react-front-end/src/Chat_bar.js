@@ -14,8 +14,9 @@ class Chat_bar extends React.Component{
     this.socket = io('localhost:8080');
 
     this.socket.on('RECEIVE_MESSAGE', function(data){
+      console.log("Im receving from Chat_bar")
       addMessage(data);
-  });
+    });
 
   const addMessage = data => {
       console.log(data);

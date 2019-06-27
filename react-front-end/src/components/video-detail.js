@@ -45,35 +45,57 @@ class Example extends React.Component {
 
   constructor(props){
     super(props);
-
     this.state = {
-      id: ''
+      id: this.props.video && this.props.video.id.videoId
     }
 
     this.socket = io('localhost:8080');
-    this.socket.on('state', function(data){
-      if (data === "play"){
-        data.playVideo()
-      }
+    
+    this.socket.on('onPause', (data) => {
+      console.log("received", typeof data, data)
+      this.setState({id: data.id})
     })
+    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this)
+
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("nextProps", nextProps)
+    if (this.state.id !== nextProps.video.id.videoId) {
+      this.socket.emit('state', {id: nextProps.video.id.videoId})
+      this.setState({ id: nextProps.video.id.videoId})
+    }
   }
 
   render() {
     const opts = {
       height: '390',
-      width: '640',
+      width: '690',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 0
       }
     };
 
-    // console.log("YOUTUBE",YT.Player);
+    // var player;
+    // function onYouTubePlayerAPIReady() {
+    //   player = new YT.Player('iframe', {
+    //     height: '360',
+    //     width: '640',
+    //     videoId: 'M7lc1UVf-VE',
+    //     events: {
+    //       'onReady': onPlayerReady,
+    //       'onStateChange': onPlayerStateChange
+    //     }
+    //   });
+    // }
 
+    console.log("VIDEO1",this.props.video)
     if (!this.props.video) {
       return null
     }
-    console.log("VIDEO1",this.props.video)
- 
+
+    this.socket.emit('state', {id: this.props.video.id.videoId}) 
+
     return (
       <YouTube
         videoId={this.props.video.id.videoId}
@@ -84,9 +106,15 @@ class Example extends React.Component {
     );
   }
  
-  _onReady(event) {
+  _onReady = (event) => {
     // access to player in all event handlers via event.target
+      // this.socket.emit('state', {id: this.props.video.id.videoId}) 
     event.target.pauseVideo();
+    // this.socket.on('onPause', function(data){
+    //   console.log("received", typeof data, data)
+    //   this.setState({id: data.id})
+    // })
+    console.log("EVENT",this.props.video.id.videoId)
   }
 }
 

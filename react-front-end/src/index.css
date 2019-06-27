@@ -100,3 +100,8 @@ border-radius: 2em;
   font-size:48px;
   color:red
 }
+
+.webcam {
+  width: 40px;
+  height: 40px;
+}
