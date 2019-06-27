@@ -22,13 +22,13 @@ class VideoDetail extends Component {
     const videoUrl = `https://youtube.com/embed/${videoId}`
 
     return (
-        <div className="video-detail col-md-8">
-          <div className="embed-responsive embed-responsive-21by9">
-            <iframe className="embed-responsive-item" src={videoUrl} width="700" height="450"></iframe>
+        <div className="video-detail_col-md-8">
+          <div className="embed-responsive_embed-responsive-21by9">
+            <iframe className="embed-responsive-item" src={videoUrl} ></iframe>
           </div>
           <div className="details">
-            <div className="title">{title}</div>
-            <div className="desc">{description}</div> -->
+            <div className="title"><strong><h3>{title}</h3></strong></div>
+            <div className="desc">{description}</div>
           </div>
         </div>
     )

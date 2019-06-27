@@ -10,7 +10,7 @@ import VideoDetail from './components/video-detail';
 import VideoList from './components/video-list';
 import './App.css';
 import Chat_bar from "./Chat_bar.js";
-const API_KEY = 'AIzaSyDDs2Azi93CNPcrKMZzefTEF0MLGjDNRhA';
+const API_KEY = 'AIzaSyAWozCjsQeq44RvaA-VPapn7tEb46ESRHY';
 
 class App extends Component {
   constructor(props) {
@@ -47,13 +47,15 @@ class App extends Component {
   // }
 
   render() {
-    const videoSearch = _.debounce(term => {
-      this.videoSearch(term);
-    }, 300);
+    // const videoSearch = _.debounce(term => {
+    //   this.videoSearch(term);
+    // }, 300);
 
     return (
       <div className="appContainer">
-        <div class="nav-bar">Buddi.io
+        <div class="nav-bar">
+        <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
+          <SearchBar onSearchTermChange={this.videoSearch}/>
         </div>
 
         <div class = "parents">
@@ -65,7 +67,7 @@ class App extends Component {
           </div>
       
         <div class="video-bar">
-          <SearchBar onSearchTermChange={videoSearch}/>
+          
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList 
               onVideoSelect={selectedVideo => this.setState({selectedVideo})} 

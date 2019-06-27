@@ -9,14 +9,14 @@ class VideoList extends Component {
   render() {
     const videoItems =  this.props.videos.map((video) => {
       return (
-        <VideoListItem 
+        <em><VideoListItem 
           onVideoSelect={this.props.onVideoSelect}
-          key={video.etag} 
-          video={video} />)
+           key={video.etag} 
+          video={video} /></em>)
     })
 
     return (
-      <div className="col-md-4 list-group">
+      <div className="col-md-4_list-group">
         {videoItems}
       </div>
     )
