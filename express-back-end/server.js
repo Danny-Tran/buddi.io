@@ -15,6 +15,12 @@ io.on('connection',(socket) =>{
   socket.on('SEND_MESSAGE', function(data){
     io.emit('RECEIVE_MESSAGE', data);
   })
+
+  socket.on('state', (data) =>{
+  	
+  	socket.broadcast.emit('onPause', data);
+  	console.log('FROM BACKEND', data);
+  })
 })
 
 // Express Configuration
