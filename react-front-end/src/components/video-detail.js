@@ -94,11 +94,11 @@ class Example extends React.Component {
       return null
     }
 
-    this.socket.emit('state', {id: this.props.video.id.videoId}) 
+    // this.socket.emit('state', {id: this.props.video.id.videoId}) 
 
     return (
       <YouTube
-        videoId={this.props.video.id.videoId}
+        videoId={this.state.id}
         opts={opts}
         onReady={this._onReady}
         onPlay={(play) => console.log("ONPLAY", play)}

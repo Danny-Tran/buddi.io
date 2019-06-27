@@ -13,7 +13,7 @@ import VideoList from './components/video-list';
 import './App.css';
 import Chat_bar from "./Chat_bar.js";
 
-const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
+const API_KEY = 'AIzaSyAWozCjsQeq44RvaA-VPapn7tEb46ESRHY';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     }
+    this.debounceSearch = _.debounce(this.videoSearch, 600);
 
     // this.socket = io('localhost:8080');
 
@@ -45,13 +46,15 @@ class App extends Component {
   }
 
   videoSearch = (term) => {
-    YTSearch({key: API_KEY, term: term}, videos => {
-      console.log("VIDEOS", videos)
-      this.setState({
-        videos: videos,
-        selectedVideo: videos[0]
+    if (term.length > 3) {
+      YTSearch({key: API_KEY, term: term}, videos => {
+        console.log("VIDEOS", videos)
+        this.setState({
+          videos: videos,
+          selectedVideo: videos[0]
+        });
       });
-    });
+    }
   }
 
   // fetchData = () => {
@@ -87,7 +90,7 @@ class App extends Component {
           </div>
       
         <div class="video-bar">
-          <SearchBar onSearchTermChange={this.videoSearch}/>
+          <SearchBar onSearchTermChange={this.debounceSearch}/>
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList 
               onVideoSelect={selectedVideo => this.setState({selectedVideo})} 
