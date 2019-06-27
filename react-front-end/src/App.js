@@ -77,7 +77,9 @@ class App extends Component {
 
     return (
       <div className="appContainer">
-        <div class="nav-bar">Buddi.io
+        <div class="nav-bar">
+        <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
+        <SearchBar onSearchTermChange={this.debounceSearch}/>
         </div>
 
         <div class = "parents">
@@ -90,8 +92,9 @@ class App extends Component {
           </div>
       
         <div class="video-bar">
-          <SearchBar onSearchTermChange={this.debounceSearch}/>
+        <div class="embed-responsive-item">
           <VideoDetail video={this.state.selectedVideo} />
+        </div>
           <VideoList 
               onVideoSelect={selectedVideo => this.setState({selectedVideo})} 
               videos={this.state.videos} 

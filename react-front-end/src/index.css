@@ -11,70 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* COMPONENT CSS */
 .parents {
-     display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
+
+
+/*/////////////////////// NAV BAR COMPONENT /////////////////*/
 .nav-bar {
-    /*position: absolute;*/
-    /*margin: 0;
-  padding: 0;
-  margin-top: 0;
-  top: 0;*/
+  display:flex;
+  flex-direction: row;
+  height: 60px;
+  background-color: #000000;
+}
+.search-bar {
+  padding: 5px 0 0 22em;
+} 
+.search-bar-img {
+  display: flex;
+  float: left;
+  padding: 10px 0 0 0;
+  width: 35px;
+}
+.logo-img{
+  width: 200px;
   height: 80px;
-  /*display: flex;*/
-    /*flex-direction: row;*/
-    background-color: green;
 }
-.chat-bar {
-    /*display: flex;*/
-    width: 35%;
-  /*margin-left:60%;*/
-  height: 600px;
-    background-color: lightblue;
-}
-.video-bar {
-    width: 55%;
-    /*height: 60%;*/
-  /*margin-left: 15%;*/
-    background-color: yellow;
-}
-.user-bar {
-    width: 10%;
-/*  height: 60%;*/
-    background-color: grey;
-}
-.chatbar-message{
-  /* width: 300px;
-  height: 50px; */
-}
-.send-button{
-  /* width: 100px;
-  height: 50px; */
-}
-.messages{
-  height:500px;
-}
+
+/*//////////////////// USER BAR CSS COMPONENT ///////////////////////////*/
 .user-bar {
   width: 10%;
-/*  height: 60%;*/
-  background-color: grey;
+  background-color: #FAF0E6;
 }
 .user1{
 background-color: white;
 border-radius: 2em;
-/* Height: 3em; */
+
 }
 .user2{
 background-color: white;
-/* height: 3em; */
 border-radius: 2em;
 }
+/*//////////////////* VIDEO BAR CSS COPONENTS /////////////////////////*/
+.video-bar {
+  width: 65%;
+  background-color: #48D1CC;
+}
 
-.search-bar {
-  margin: 20px;
-  padding-left: 20px;
-  border:1px solid grey;
+.embed-responsive-item{ /* video frame */
+  padding: 10px;
+  width: 98%;
+  height: 500px;
 }
 
 .search-bar input {
@@ -83,25 +72,40 @@ border-radius: 2em;
   width: 500px;
 }
 
-.search-bar img {
-  width: 35px;
-  height: 35px;
-}
-
 .video-list-media {
   margin: 40px;
 }
-
-/*.video-detail {
-  margin: 40px;
-}*/
 
 .fa fa-youtube-play {
   font-size:48px;
   color:red
 }
 
-.webcam {
-  width: 40px;
-  height: 40px;
+.col-md-4_list-group{ /*display all video in block */
+  display: flex;
+  flex-direction: row;
+}
+.video-detail_col-md-8{
+  border:5px;
+}
+
+/*//////////////// CHAT BAR COPONENT CSS /////////////////////////*/
+.chat-bar {
+  width: 25%;
+  background-color: #48D1CC;
+}
+.card-body{
+  padding: 10px;
+  height:47em;
+  /* width:22%; */
+  background-color: #FAF0E6
+  ;
+}
+.card-footer{
+  display: flex;
+  flex-direction: row;
+}
+.form-name{
+  width: 100px;
+  height: 25px;
 }

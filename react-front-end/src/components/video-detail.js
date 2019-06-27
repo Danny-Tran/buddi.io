@@ -102,7 +102,8 @@ class Example extends React.Component {
         opts={opts}
         onReady={this._onReady}
         onPlay={(play) => console.log("ONPLAY", play)}
-      />
+        />
+      
     );
   }
  
@@ -115,6 +116,16 @@ class Example extends React.Component {
     //   this.setState({id: data.id})
     // })
     console.log("EVENT",this.props.video.id.videoId)
+        // (<div className="video-detail_col-md-8">
+        //   <div className="embed-responsive_embed-responsive-21by9">
+        //     <iframe className="embed-responsive-item" src={videoUrl} ></iframe>
+        //   </div>
+        //   <div className="details">
+        //     <div className="title"><strong><h3>{title}</h3></strong></div>
+        //     <div className="desc">{description}</div>
+        //   </div>
+        // </div>)
+    
   }
 }
 

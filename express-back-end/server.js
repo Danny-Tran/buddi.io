@@ -21,6 +21,7 @@ io.on('connection',(socket) =>{
   	socket.broadcast.emit('onPause', data);
   	console.log('FROM BACKEND', data);
   })
+
 })
 
 // Express Configuration

@@ -37,33 +37,30 @@ class Chat_bar extends React.Component{
 
 render(){
   return (
-      <div className="container">
-          <div className="row">
-              <div className="col-4">
-                  <div className="card">
-                      <div className="card-body">
-                          <div className="card-title">Chat Room 1 Messages</div>
-                          <hr/>
-                          <div className="messages">
-                              {this.state.messages.map(message => {
-                                  return (
-                                      <div>{message.author}: {message.message}</div>
-                                  )
-                              })}
-                          </div>
+    <div className="container">
+        <div className="card">
+            <div className="card-body">
+                <div className="card-title">Chat Room Messages</div>
+                    <hr/>
+                    <div className="messages">
+                        {this.state.messages.map(message => {
+                            return (
+                                <div>{message.author}: {message.message}</div>
+                            )
+                        })}
+                    </div>
 
                       </div>
                       <div className="card-footer">
-                          <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
+                          <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-name"/>
                           <br/>
-                          <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
+                          <input type="text" placeholder="Message" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} className="form-message"/>
                           <br/>
                           <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
                       </div>
                   </div>
-              </div>
-          </div>
-      </div>
+    </div>
+          
   );
 }
 }
