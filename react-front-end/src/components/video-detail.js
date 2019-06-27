@@ -55,7 +55,7 @@ class Example extends React.Component {
       console.log("received", typeof data, data)
       this.setState({id: data.id})
     })
-    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this)
+    // this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this)
 
   }
 
