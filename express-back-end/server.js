@@ -51,6 +51,10 @@ io.on('connection',(socket) =>{
   //   console.log('Listening to PAUSE',data);
   // });
 
+  socket.on('webcam_connected', (data) => {
+    console.log('Webcam on', data);
+    socket.broadcast.emit('webcam_stream', data)
+  });
 
 })
 
