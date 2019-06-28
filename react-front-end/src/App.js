@@ -13,7 +13,7 @@ import VideoList from './components/video-list';
 import './App.css';
 import Chat_bar from "./Chat_bar.js";
 
-const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
+const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 
 class App extends Component {
   constructor(props) {
@@ -25,24 +25,13 @@ class App extends Component {
     }
     this.debounceSearch = _.debounce(this.videoSearch, 600);
 
-    // this.socket = io('localhost:8080');
-
-    // this.socket.on('RECEIVE_MESSAGE', function(data){
-    //     console.log("Im receving from Chat_bar")
-    //     addMessage(data);
-    // });
-
-    // this.socket.on('onPause', (data) => {
-    //     console.log("received", typeof data, data)
-    //     this.setState({id: data.id})
-    //   })
   }
   
 
 
 
   componentDidMount() {
-    this.videoSearch('trailer');
+    this.videoSearch('dubai');
   }
 
   videoSearch = (term) => {
@@ -95,7 +84,10 @@ class App extends Component {
         <div className="embed-responsive-item">
           <VideoDetail video={this.state.selectedVideo} />
         </div>
-          
+          <VideoList
+             onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+             videos={this.state.videos}
+          />
         </div>
 
         <div role="complimentary" className="chat-bar" > 

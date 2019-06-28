@@ -22,15 +22,25 @@ io.on('connection',(socket) =>{
   	console.log('FROM BACKEND', data);
   })
 
-  // socket.on('youtube_onPlay', (data) => {
-  //   socket.broadcast.emit('youtube_playVideo', data);
-  // 	console.log('Listening to PLAY');
+  // socket.on('receive', (data) => {
+  // 	if(data == 1) {
+  //   	socket.broadcast.emit('command', data);
+	 //  } else if (data == 2) {
+	 //  	socket.broadcast.emit('command', data);
+	 //  }
+	 //  	console.log('Listening to PLAY', data);
+	 //  }
   // });
 
-  // socket.on('youtube_onPause', (data) => {
-  //   socket.broadcast.emit('youtube_pauseVideo', data)
-  //   console.log('Listening to PAUSE');
-  // });
+  socket.on('youtube_onPlay', (data) => {
+    socket.broadcast.emit('youtube_playVideo', data);
+  	console.log('Listening to PLAY', data);
+  });
+
+  socket.on('youtube_onPause', (data) => {
+    socket.broadcast.emit('youtube_pauseVideo', data)
+    console.log('Listening to PAUSE',data);
+  });
 
 })
 

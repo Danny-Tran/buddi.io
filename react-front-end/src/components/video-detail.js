@@ -46,9 +46,7 @@ class Example extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      id: this.props.video && this.props.video.id.videoId,
-      // onPlay: this.props.video
-
+      id: this.props.video && this.props.video.id.videoId
     }
 
     this.socket = io('localhost:8080');
@@ -58,14 +56,13 @@ class Example extends React.Component {
       this.setState({id: data.id})
     })
 
-    this.socket.on('youtube_onPlay', (data) => {
-      this.setState({data})
+    this.socket.on('youtube_playVideo', (data) => {
+      this.player.playVideo()
       console.log("ONPLAY FROM VIDEO DETAIL", data)
     })
 
-    this.socket.on('youtube_onPause', (data) => {
-      this.setState('youtube_playVideo', data)
-      // this.socket.emit('youtube_playVideo', data)
+    this.socket.on('youtube_pauseVideo', (data) => {
+      this.player.pauseVideo()
       console.log("ONPLAY FROM VIDEO DETAIL", data)
     })
 
@@ -88,51 +85,49 @@ class Example extends React.Component {
       }
     };
 
-    // var player;
-    // function onYouTubePlayerAPIReady() {
-    //   player = new YT.Player('iframe', {
-    //     height: '360',
-    //     width: '640',
-    //     videoId: 'M7lc1UVf-VE',
-    //     events: {
-    //       'onReady': onPlayerReady,
-    //       'onStateChange': onPlayerStateChange
-    //     }
-    //   });
-    // }
-
     console.log("VIDEO1",this.props.video)
     if (!this.props.video) {
       return null
     }
-
-    // this.socket.emit('state', {id: this.props.video.id.videoId}) 
 
     return (
       <YouTube
         videoId={this.state.id}
         opts={opts}
         onReady={this._onReady}
-        // onPlay={(play) => console.log("ONPLAY", play)}
-        // onPlay={this._onPlay}
+        onPause={this._onPause}
+        onPlay={this._onPlay}
+        // onStateChange={this._currentTime} 
         />
-      
     );
-
   }
-  // _onPlay = (event) => {
 
-  //   event.target.playVideo();
-  //   console.log("Play event", event)
+  // _currentTime = (event) => {
+  //   // console.log("Play event", event.data)
+  //   // console.log("PLAYERERERERER", this.player.getCurrentTime())
+  //   this.socket.emit('youtube_onPlay', this.player.getCurrentTime())
   // }
 
+  _onPlay = (event) => {
+    console.log("Play event", event.data)
+    console.log("PLAYERERERERER", this.player.getCurrentTime())
+    this.socket.emit('youtube_onPlay', event.data, this.player.getCurrentTime())
+  }
+
+
+  _onPause = (event) => {
+    console.log("pause event", event.data)
+    this.socket.emit('youtube_onPause', event.data)
+  }
+
   _onReady = (event) => {
-    event.target.playVideo();
-    console.log("Play event", event)
+    this.player = event.target;
+    console.log("Play event", event.target.playVideo())
 
     event.target.pauseVideo();
     console.log("EVENT",this.props.video.id.videoId)
   }
+
 }
 
 export default Example
