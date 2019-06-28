@@ -26,7 +26,7 @@ class UserBar extends React.Component{
 
   render(){
     const users = this.state.username.map((user, index) => {
-      return  <li key={index}>{user}</li>
+      return  <li key={index}> {user} </li>
     })
     return (
       <div class="user-bar">
