@@ -1,5 +1,6 @@
 import React from "react";
 import io from "socket.io-client";
+import ChatBubble from 'react-chat-bubble';
 
 class Chat_bar extends React.Component{
   constructor(props){
@@ -43,21 +44,41 @@ class Chat_bar extends React.Component{
         <div className="card">
             <div className="card-body">
                 <div className="card-title">Chat Room Messages</div>
+                 
+                
+                
                     <hr/>
-                    <div className="messages">
+                    {/* <div className="author-name">
+                    
                         {this.state.messages.map(message => {
                             return (
-                                <div>{message.author}: {message.message}</div>
+                                <div>{message.author}</div>
                             )
                         })}
+                        
+                    </div> */}
+                    <div className="containerr">
+                        
+                        {this.state.messages.map(message => {
+                            return (
+                              <div className="container">
+                              
+                              <img src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="Avatar"></img>
+                              <div className='author-name'>{message.author}</div>
+                              <span class="time-right">{new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) }</span>
+                                <div className='message-content'> {message.message}</div>
+                              </div>
+                            )
+                        })}
+                        
                     </div>
 
                       </div>
                       <div className="card-footer">
-                          <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-name"/>
-                          <br/>
-                          <input type="text" placeholder="Message" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} className="form-message"/>
-                          <br/>
+                          <input    type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-name"/>
+                          <br></br>
+                          <input  type="text" placeholder="Message" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} className="form-message"/>
+                          
                           <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
                       </div>
                   </div>
