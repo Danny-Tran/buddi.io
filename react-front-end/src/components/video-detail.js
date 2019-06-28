@@ -86,6 +86,7 @@ class Example extends React.Component {
   }
 
   render() {
+    
     const opts = {
       height: '450',
       width: '810',
@@ -93,6 +94,7 @@ class Example extends React.Component {
         autoplay: 0
       }
     };
+    
 
     console.log("VIDEO1",this.props.video)
     if (!this.props.video) {

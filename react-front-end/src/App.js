@@ -5,11 +5,9 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 // import ReactDOM from 'react-dom'
 
 import FullRender from './FullRender';
-import './App.css';
 import Main from "./components/main.js";
 
-const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
-
+import './App.css';
 
 class App extends Component {
   render() {
@@ -19,7 +17,6 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        
 
         <Route exact path="/" component={Main} />
         <Route path="/main" component={FullRender} />

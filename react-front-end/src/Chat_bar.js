@@ -35,12 +35,14 @@ sendMessage = ev => {
   this.setState({message: ''});
 }
 
-render(){
+  render(){
   return (
     <div className="container">
         <div className="card">
             <div className="card-body">
-                <div className="card-title">Chat Room Messages </div>
+                <div className="card-title">Chat Room Messages</div>
+                 
+                
                 
                     <hr/>
                     {/* <div className="author-name">
@@ -57,9 +59,11 @@ render(){
                         {this.state.messages.map(message => {
                             return (
                               <div className="container">
+                              
                               <img src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="Avatar"></img>
-                              <span class="time-right">{ }</span>
-                                <div> {message.message}</div>
+                              <div className='author-name'>{message.author}</div>
+                              <span class="time-right">{new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) }</span>
+                                <div className='message-content'> {message.message}</div>
                               </div>
                             )
                         })}
@@ -68,10 +72,10 @@ render(){
 
                       </div>
                       <div className="card-footer">
-                          <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-name"/>
-                          <br/>
-                          <input type="text" placeholder="Message" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} className="form-message"/>
-                          <br/>
+                          <input    type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-name"/>
+                          <br></br>
+                          <input  type="text" placeholder="Message" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} className="form-message"/>
+                          
                           <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
                       </div>
                   </div>

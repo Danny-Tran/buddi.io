@@ -14,6 +14,7 @@ import './App.css';
 import Chat_bar from "./Chat_bar.js";
 import Main from "./components/main.js";
 import ChatBubble from 'react-chat-bubble';
+import UserBar from "./user_bar.js";
 
 const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 
@@ -72,12 +73,8 @@ class FullRender extends Component {
             <SearchBar onSearchTermChange={this.debounceSearch}/>
           </div>
           <div className = "parents">
-            <div className="user-bar">Users
-              <div className="user-layout">
-                <div className="webcam"></div>
-                <p className="user1">User 1</p>
-                <p className="user2">User 2</p>
-              </div>
+            <div className="user-bar"> Users
+               <div> <UserBar/> </div>
             </div>
         
             <div className="video-bar">
