@@ -33,14 +33,20 @@ io.on('connection',(socket) =>{
   // });
 
   socket.on('youtube_onPlay', (data) => {
-    socket.broadcast.emit('youtube_playVideo', data);
-  	console.log('Listening to PLAY', data);
+    socket.broadcast.emit('youtube_playVideo', data.time);
+  	console.log('Listening to PLAY', data.time);
   });
 
   socket.on('youtube_onPause', (data) => {
     socket.broadcast.emit('youtube_pauseVideo', data)
     console.log('Listening to PAUSE',data);
   });
+
+  // socket.on('youtube_onPlay', (data) => {
+  //   socket.broadcast.emit('seek_playVideo', data)
+  //   console.log('Listening to PAUSE',data);
+  // });
+
 
 })
 

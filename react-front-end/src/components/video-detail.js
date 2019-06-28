@@ -58,8 +58,17 @@ class Example extends React.Component {
 
     this.socket.on('youtube_playVideo', (data) => {
       this.player.playVideo()
-      console.log("ONPLAY FROM VIDEO DETAIL", data)
+      // this.player.seekTo()
+      console.log("ONPLAY FROM VIDEO DETAIL", data.time)
+      // console.log("Seeking", this.player.seekTo(data.time))
     })
+
+    // this.socket.on('seek_playVideo', (data) => {
+    //   // this.player.playVideo()
+    //   this.player.seekTo()
+    //   // console.log("ONPLAY FROM VIDEO DETAIL", data.time)
+    //   console.log("Seeking", this.player.seekTo())
+    // })
 
     this.socket.on('youtube_pauseVideo', (data) => {
       this.player.pauseVideo()
@@ -111,7 +120,7 @@ class Example extends React.Component {
   _onPlay = (event) => {
     console.log("Play event", event.data)
     console.log("PLAYERERERERER", this.player.getCurrentTime())
-    this.socket.emit('youtube_onPlay', event.data, this.player.getCurrentTime())
+    this.socket.emit('youtube_onPlay', {event: event.data, time: this.player.getCurrentTime()})
   }
 
 
