@@ -12,8 +12,9 @@ import VideoDetail from './components/video-detail';
 import VideoList from './components/video-list';
 import './App.css';
 import Chat_bar from "./Chat_bar.js";
+import ChatBubble from 'react-chat-bubble';
 
-const API_KEY = 'AIzaSyAWozCjsQeq44RvaA-VPapn7tEb46ESRHY';
+const API_KEY = 'AIzaSyAhuqrdRNeRpC7oA7bs95V5kaP1RAF3_Ug';
 
 class App extends Component {
   constructor(props) {
@@ -76,10 +77,12 @@ class App extends Component {
     // }, 300);
 
     return (
+      
       <div className="appContainer">
         <div class="nav-bar">
         <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
         <SearchBar onSearchTermChange={this.debounceSearch}/>
+        
         </div>
 
         <div class = "parents">
