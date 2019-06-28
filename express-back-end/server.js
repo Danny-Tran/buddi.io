@@ -7,10 +7,14 @@ server = App.listen(PORT,()=>{
 })
 const socket = require('socket.io');
 io = socket(server)
-
+let online = 0;
 io.on('connection',(socket) =>{
   console.log('SERVER MESSAGE')
   console.log(socket.id)
+  online -3 ;
+  
+  io.sockets.emit('userCount', { userCount: online });
+  console.log(online);
 
   socket.on('SEND_MESSAGE', function(data){
     io.emit('RECEIVE_MESSAGE', data);

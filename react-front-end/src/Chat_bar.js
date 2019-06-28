@@ -1,5 +1,6 @@
 import React from "react";
 import io from "socket.io-client";
+import ChatBubble from 'react-chat-bubble';
 
 class Chat_bar extends React.Component{
   constructor(props){
@@ -40,14 +41,30 @@ render(){
     <div className="container">
         <div className="card">
             <div className="card-body">
-                <div className="card-title">Chat Room Messages</div>
+                <div className="card-title">Chat Room Messages </div>
+                
                     <hr/>
-                    <div className="messages">
+                    {/* <div className="author-name">
+                    
                         {this.state.messages.map(message => {
                             return (
-                                <div>{message.author}: {message.message}</div>
+                                <div>{message.author}</div>
                             )
                         })}
+                        
+                    </div> */}
+                    <div className="containerr">
+                        
+                        {this.state.messages.map(message => {
+                            return (
+                              <div className="container">
+                              <img src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="Avatar"></img>
+                              <span class="time-right">{ }</span>
+                                <div> {message.message}</div>
+                              </div>
+                            )
+                        })}
+                        
                     </div>
 
                       </div>
