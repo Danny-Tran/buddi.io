@@ -25,12 +25,7 @@ class UserBar extends React.Component{
 
 
   render(){
-    // const users = this.state.username.map((user, index) => {
-    //   return  <li key={index}> {user} </li>
-    // })
-
     const users = this.state.username
-    // let unique = [...new Set(users)]
     function uniqueArray(users){
       const result = Array.from(new Set(users))
       return result
