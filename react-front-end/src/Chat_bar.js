@@ -14,17 +14,17 @@ class Chat_bar extends React.Component{
     this.socket = io('localhost:8080');
 
     this.socket.on('RECEIVE_MESSAGE', function(data){
-      console.log("Im receving from Chat_bar")
+      // console.log("Im receving from Chat_bar", data)
       addMessage(data);
     });
 
-  const addMessage = data => {
-      console.log(data);
+    const addMessage = data => {
+      // console.log(data);
       this.setState({messages: [...this.state.messages, data]});
-      console.log(this.state.messages);
-  };
+      // console.log(this.state.messages);
+    };
 
-  this.sendMessage = ev => {
+    this.sendMessage = ev => {
       ev.preventDefault();
       this.socket.emit('SEND_MESSAGE', {
           author: this.state.username,
@@ -33,9 +33,11 @@ class Chat_bar extends React.Component{
       this.setState({message: ''});
 
   }
+
+  
 }
 
-render(){
+  render(){
   return (
     <div className="container">
         <div className="card">

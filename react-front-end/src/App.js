@@ -12,8 +12,9 @@ import VideoDetail from './components/video-detail';
 import VideoList from './components/video-list';
 import './App.css';
 import Chat_bar from "./Chat_bar.js";
+import UserBar from "./user_bar.js"
 
-const API_KEY = 'AIzaSyAWozCjsQeq44RvaA-VPapn7tEb46ESRHY';
+const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 
 class App extends Component {
   constructor(props) {
@@ -80,15 +81,15 @@ class App extends Component {
         <div class="nav-bar">
         <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
         <SearchBar onSearchTermChange={this.debounceSearch}/>
+        <p>Online</p>
         </div>
 
         <div class = "parents">
           <div class="user-bar">Users
-            <div class="user-layout">
-              <div class="webcam"></div>
-              <p class="user1">User 1</p>
-              <p class="user2">User 2</p>
-            </div>
+            
+              <div> <UserBar/> </div>
+             
+            
           </div>
       
         <div class="video-bar">

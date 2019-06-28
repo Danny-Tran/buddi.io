@@ -68,6 +68,7 @@ class Example extends React.Component {
   }
 
   render() {
+    
     const opts = {
       height: '390',
       width: '690',
@@ -75,6 +76,7 @@ class Example extends React.Component {
         autoplay: 0
       }
     };
+    
 
     // var player;
     // function onYouTubePlayerAPIReady() {

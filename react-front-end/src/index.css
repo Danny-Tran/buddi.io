@@ -27,17 +27,22 @@ code {
   background-color: #000000;
 }
 .search-bar {
-  padding: 5px 0 0 22em;
+  /* padding: 5px 0 0 22em; */
+  display: flex;
+  flex-direction: row;
+   
 } 
 .search-bar-img {
-  display: flex;
+  display: inline-flex;
   float: left;
   padding: 10px 0 0 0;
   width: 35px;
+  height: 40px;
 }
 .logo-img{
   width: 200px;
   height: 80px;
+  margin: 0 5em 0 0;
 }
 
 /*//////////////////// USER BAR CSS COMPONENT ///////////////////////////*/
@@ -84,6 +89,7 @@ border-radius: 2em;
 .col-md-4_list-group{ /*display all video in block */
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 .video-detail_col-md-8{
   border:5px;
@@ -98,8 +104,8 @@ border-radius: 2em;
   padding: 10px;
   height:47em;
   /* width:22%; */
-  background-color: #FAF0E6
-  ;
+  background-color: #FAF0E6;
+  width: 96%;
 }
 .card-footer{
   display: flex;
