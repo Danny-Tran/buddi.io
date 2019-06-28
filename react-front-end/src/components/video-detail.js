@@ -48,41 +48,41 @@ class Example extends React.Component {
     this.state = {
       id: this.props.video && this.props.video.id.videoId
     }
+  }
 
-    this.socket = io('localhost:8080');
-    
-    this.socket.on('onPause', (data) => {
+
+  componentWillReceiveProps(nextProps) {
+    console.log("nextProps", nextProps)
+    if (this.state.id !== nextProps.video.id.videoId) {
+      this.props.socket.emit('state', {id: nextProps.video.id.videoId})
+      this.setState({ id: nextProps.video.id.videoId})
+    }
+  }
+
+  componentDidMount() {
+    this.props.socket.on('onPause', (data) => {
       console.log("received", typeof data, data)
       this.setState({id: data.id})
     })
 
-    this.socket.on('youtube_playVideo', (data) => {
+    this.props.socket.on('youtube_playVideo', (data) => {
       this.player.playVideo()
       // this.player.seekTo()
       console.log("ONPLAY FROM VIDEO DETAIL", data.time)
       // console.log("Seeking", this.player.seekTo(data.time))
     })
 
-    // this.socket.on('seek_playVideo', (data) => {
+    // this.props.socket.on('seek_playVideo', (data) => {
     //   // this.player.playVideo()
     //   this.player.seekTo()
     //   // console.log("ONPLAY FROM VIDEO DETAIL", data.time)
     //   console.log("Seeking", this.player.seekTo())
     // })
 
-    this.socket.on('youtube_pauseVideo', (data) => {
+    this.props.socket.on('youtube_pauseVideo', (data) => {
       this.player.pauseVideo()
       console.log("ONPLAY FROM VIDEO DETAIL", data)
     })
-
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log("nextProps", nextProps)
-    if (this.state.id !== nextProps.video.id.videoId) {
-      this.socket.emit('state', {id: nextProps.video.id.videoId})
-      this.setState({ id: nextProps.video.id.videoId})
-    }
   }
 
   render() {
@@ -114,19 +114,19 @@ class Example extends React.Component {
   // _currentTime = (event) => {
   //   // console.log("Play event", event.data)
   //   // console.log("PLAYERERERERER", this.player.getCurrentTime())
-  //   this.socket.emit('youtube_onPlay', this.player.getCurrentTime())
+  //   this.props.socket.emit('youtube_onPlay', this.player.getCurrentTime())
   // }
 
   _onPlay = (event) => {
     console.log("Play event", event.data)
     console.log("PLAYERERERERER", this.player.getCurrentTime())
-    this.socket.emit('youtube_onPlay', {event: event.data, time: this.player.getCurrentTime()})
+    this.props.socket.emit('youtube_onPlay', {event: event.data, time: this.player.getCurrentTime()})
   }
 
 
   _onPause = (event) => {
     console.log("pause event", event.data)
-    this.socket.emit('youtube_onPause', event.data)
+    this.props.socket.emit('youtube_onPause', event.data)
   }
 
   _onReady = (event) => {

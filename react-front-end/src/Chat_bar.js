@@ -11,29 +11,28 @@ class Chat_bar extends React.Component{
         message: '',
         messages: []
     };
-
-    this.socket = io('localhost:8080');
-
-    this.socket.on('RECEIVE_MESSAGE', function(data){
-      console.log("Im receving from Chat_bar")
-      addMessage(data);
-    });
-
-  const addMessage = data => {
-      console.log(data);
-      this.setState({messages: [...this.state.messages, data]});
-      console.log(this.state.messages);
-  };
-
-  this.sendMessage = ev => {
-      ev.preventDefault();
-      this.socket.emit('SEND_MESSAGE', {
-          author: this.state.username,
-          message: this.state.message
-      })
-      this.setState({message: ''});
-
   }
+
+  componentDidMount() {
+    this.props.socket.on('RECEIVE_MESSAGE', (data) => {
+      console.log("Im receving from Chat_bar")
+      this.addMessage(data);
+    });
+  }
+
+addMessage = data => {
+    console.log(data);
+    this.setState({messages: [...this.state.messages, data]});
+    console.log(this.state.messages);
+};
+
+sendMessage = ev => {
+  ev.preventDefault();
+  this.props.socket.emit('SEND_MESSAGE', {
+      author: this.state.username,
+      message: this.state.message
+  })
+  this.setState({message: ''});
 }
 
 render(){
