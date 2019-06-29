@@ -18,7 +18,6 @@ import UserBar from "./user_bar.js";
 
 const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
-
 class FullRender extends Component {
 
   turnOn = () => {
