@@ -8,6 +8,8 @@ server = App.listen(PORT,()=>{
 const socket = require('socket.io');
 io = socket(server)
 let online = 0;
+
+
 io.on('connection',(socket) =>{
   console.log('SERVER MESSAGE')
   console.log(socket.id)
@@ -51,7 +53,7 @@ io.on('connection',(socket) =>{
   //   console.log('Listening to PAUSE',data);
   // });
 
-  socket.on('webcam_connected', (data) => {
+  socket.on('webcam', (data) => {
     console.log('Webcam on', data);
     socket.broadcast.emit('webcam_stream', data)
   });

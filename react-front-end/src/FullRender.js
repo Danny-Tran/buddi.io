@@ -16,23 +16,45 @@ import Main from "./components/main.js";
 import ChatBubble from 'react-chat-bubble';
 import UserBar from "./user_bar.js";
 
-const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
+const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
 class FullRender extends Component {
+
+  turnOn = () => {
+    this.setState({ webcamEnabled: true });
+    // console.log("This.webcam", this.webcam.stream)
+    // this.socket.emit('webcam_connected', this.webcam.stream)
+  }
+  turnOff = () => this.setState({ webcamEnabled: false });
+
   constructor(props) {
     super(props)
     this.state = {
       message: 'Click the button to load data!',
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      webcamEnabled: false
     }
     this.debounceSearch = _.debounce(this.videoSearch, 600);
 
   }
+  handleUserMedia = (event) => {
+    console.log("usermedia", event);
+    console.log("This.webcam", this.webcam.stream)
+    // console.log("This.webcam", this.webcam.streaur)
+    this.setState({ stream: this.webcam.stream })
+    // this.socket.emit('webcam', this.webcam.stream)
+  }
+ 
 
   componentDidMount() {
     this.socket = io('localhost:8080');
-    this.videoSearch('dubai');
+    this.videoSearch('london');
+
+    this.socket.on('webcam_stream', (data) => {
+      // this.webcam
+      console.log("Webcam details", this.webcam)
+    })
   }
 
   videoSearch = (term) => {
@@ -46,6 +68,15 @@ class FullRender extends Component {
       });
     }
   }
+
+  setRef = webcam => {
+    this.webcam = webcam;
+  };
+
+  capture = () => {
+    const imageSrc = this.webcam.getScreenshot();
+    alert(imageSrc);
+  };
 
   // fetchData = () => {
   //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
@@ -74,7 +105,28 @@ class FullRender extends Component {
           </div>
           <div className = "parents">
             <div className="user-bar"> Users
-               <div> <UserBar/> </div>
+              <div> <UserBar/> </div>
+              {this.state.webcamEnabled ? (
+                  <Webcam 
+                    // audio={false}
+                    height={120}
+                    ref={this.setRef}
+                    screenshotFormat="image/jpeg"
+                    width={120}
+                    onUserMedia={this.handleUserMedia}
+                  />
+              ) : (
+                <button type="button" onClick={this.turnOn}>
+                  Webcam On
+                </button>
+              )}
+
+              <button type="button" onClick={this.turnOff}>
+                  Turn Off
+              </button>
+
+              <button onClick={this.capture}>Capture photo</button>
+              <video style={{ height: 100, width: 100 }} src={this.state.stream} />
             </div>
         
             <div className="video-bar">
