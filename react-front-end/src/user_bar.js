@@ -11,13 +11,13 @@ class UserBar extends React.Component{
   }
 
   componentDidMount() {
-    this.socket = io('localhost:8080');
+    // this.props.socket = io('localhost:8080');
 
     const addUser = data => {
       this.setState({username: [...this.state.username, data.author]});
     };
 
-    this.socket.on('RECEIVE_MESSAGE', function(data){
+    this.props.socket.on('RECEIVE_MESSAGE', function(data){
       addUser(data)
       console.log("Im receving from USER_BAR",data.author)
     });

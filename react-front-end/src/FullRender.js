@@ -18,6 +18,7 @@ import UserBar from "./user_bar.js";
 
 const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
+
 class FullRender extends Component {
 
   turnOn = () => {
@@ -48,13 +49,14 @@ class FullRender extends Component {
  
 
   componentDidMount() {
-    this.socket = io('localhost:8080');
+    //this.socket = io('localhost:8080');
+    this.socket = io('http://192.168.15.141:3000');
     this.videoSearch('london');
 
-    this.socket.on('webcam_stream', (data) => {
-      // this.webcam
-      console.log("Webcam details", this.webcam)
-    })
+    // this.socket.on('webcam_stream', (data) => {
+    //   // this.webcam
+    //   console.log("Webcam details", this.webcam)
+    // })
   }
 
   videoSearch = (term) => {
@@ -127,6 +129,7 @@ class FullRender extends Component {
 
               <button onClick={this.capture}>Capture photo</button>
               <video style={{ height: 100, width: 100 }} src={this.state.stream} />
+               <div> <UserBar socket={this.socket} /> </div>
             </div>
         
             <div className="video-bar">

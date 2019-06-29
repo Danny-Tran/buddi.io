@@ -13,7 +13,7 @@ let online = 0;
 io.on('connection',(socket) =>{
   console.log('SERVER MESSAGE')
   console.log(socket.id)
-  online -3 ;
+  online++ ;
   
   io.sockets.emit('userCount', { userCount: online });
   console.log(online);
@@ -40,7 +40,7 @@ io.on('connection',(socket) =>{
 
   socket.on('youtube_onPlay', (data) => {
   	console.log('Listening to PLAY', data);
-    socket.broadcast.emit('youtube_playVideo', data);
+    socket.broadcast.emit('youtube_playVideo', { ...data, socketId: socket.id });
   });
 
   socket.on('youtube_onPause', (data) => {
