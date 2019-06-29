@@ -31,7 +31,7 @@ class FullRender extends Component {
   }
 
   componentDidMount() {
-    this.socket = io('localhost:8080');
+    this.socket = io('http://192.168.15.146:3000');
     this.videoSearch('dubai');
   }
 
@@ -74,7 +74,7 @@ class FullRender extends Component {
           </div>
           <div className = "parents">
             <div className="user-bar"> Users
-               <div> <UserBar/> </div>
+               <div> <UserBar socket={this.socket} /> </div>
             </div>
         
             <div className="video-bar">
