@@ -15,6 +15,7 @@ import Chat_bar from "./Chat_bar.js";
 import Main from "./components/main.js";
 import ChatBubble from 'react-chat-bubble';
 import UserBar from "./user_bar.js";
+import Cam from './components/web-cam.js';
 
 const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
@@ -31,8 +32,8 @@ class FullRender extends Component {
   }
 
   componentDidMount() {
-    //this.socket = io('http://192.168.15.146:3000');
-    this.socket = io('http://localhost:3000');
+    this.socket = io('http://192.168.15.146:3000');
+    // this.socket = io('http://localhost:3000');
     this.videoSearch('dubai');
   }
 
@@ -90,6 +91,7 @@ class FullRender extends Component {
 
             <div role="complimentary" className="chat-bar" > 
               <Chat_bar socket={this.socket} />
+              
           </div>         
         </div>
         </div>

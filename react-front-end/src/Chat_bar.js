@@ -18,6 +18,10 @@ class Chat_bar extends React.Component{
       console.log("Im receving from Chat_bar")
       this.addMessage(data);
     });
+    this.props.socket.on('userCount', (data) => {
+      console.log("online", data.userCount)
+      this.setState({counter:data.userCount})
+    })
   }
 
 addMessage = data => {
@@ -40,7 +44,7 @@ sendMessage = ev => {
     <div className="container">
         <div className="card">
             <div className="card-body">
-                <div className="card-title">Chat Room Messages</div>
+                <div className="card-title"> Chat Messages  ({this.state.counter}) online</div>
                  
                 
                 

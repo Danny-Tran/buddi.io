@@ -10,10 +10,17 @@ class Main extends React.Component {
         <div className="nav-bar">
         <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
         </div>
-        <div>
-  				<h2>Welcome Page</h2>
-  				<Link to="/main">Create Room</Link>
-				</div>
+        
+  				
+					<div class='table'>
+							<div class='cell'>
+									<form id="login" action="index.html">
+										<h2>Welcome Page</h2>
+										<Link to="/main">Create Room</Link>
+									</form>
+							</div>
+					</div>
+				
 
         </div>
   		)
