@@ -62,9 +62,6 @@ class FullRender extends Component {
   // }
 
   render() {
-    // const videoSearch = _.debounce(term => {
-    //   this.videoSearch(term);
-    // }, 300);
     if (!this.socket) return null;
     return (
    

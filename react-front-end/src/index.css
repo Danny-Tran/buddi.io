@@ -42,7 +42,7 @@ code {
   height: 36px;
 }
 .logo-img{
-  padding: 10px 110px 10px 30px;
+  padding: 10px 150px 10px 30px;
   /*width: 200px;*/
   height: 40px;
   margin: 0 5em 0 0;
@@ -103,7 +103,7 @@ code {
 .search-bar input {
   margin: 10px;
   height: 30px;
-  width: 500px;
+  width: 400px;
 }
 
 .video-list-media {
