@@ -15,8 +15,15 @@ class Main extends React.Component {
 					<div class='table'>
 							<div class='cell'>
 									<form id="login" action="index.html">
-										<h2>Welcome Page</h2>
-										<Link to="/main">Create Room</Link>
+									<div class="typewriter">
+											<h2>Welcome to Buddi.Watch </h2>
+											<span  className='spann'> Watch together </span>
+											| 
+											<span> chill together</span>
+									</div>
+									
+										<Link to="/main"><button className="button	">Create Your	Room</button></Link>
+										
 									</form>
 							</div>
 					</div>
