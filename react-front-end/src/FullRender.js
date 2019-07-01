@@ -63,15 +63,12 @@ class FullRender extends Component {
   // }
 
   render() {
-    // const videoSearch = _.debounce(term => {
-    //   this.videoSearch(term);
-    // }, 300);
     if (!this.socket) return null;
     return (
    
         <div className="appContainer">
           <div className="nav-bar">
-            <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
+            <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
           </div>
           <div className = "parents">
