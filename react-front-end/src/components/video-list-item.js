@@ -19,9 +19,10 @@ class VideoListItem extends Component {
             <img className="media-object" src={imgUrl} />
           </div>
           <div className="media-body">
-            <div className="media-heading" >
+            <text className="media-heading" numberOfLines={5} ellipsizeMode='tail'>
+              
               {title}
-            </div>
+            </text>
           </div>
         </div>
           

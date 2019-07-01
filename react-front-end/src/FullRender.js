@@ -6,6 +6,7 @@ import axios from 'axios';
 import YTSearch from 'youtube-api-search';
 import Webcam from 'react-webcam';
 import io from "socket.io-client";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import SearchBar from './components/search-bar';
 import VideoDetail from './components/video-detail';
@@ -70,6 +71,8 @@ class FullRender extends Component {
           <div className="nav-bar">
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
+            <Link to="/"><button className="logout-button">Logout</button></Link>
+
           </div>
           <div className = "parents">
             <div className="user-bar"> Users
@@ -92,9 +95,6 @@ class FullRender extends Component {
           </div>         
         </div>
         </div>
-
-        
-
     );
   }
 }

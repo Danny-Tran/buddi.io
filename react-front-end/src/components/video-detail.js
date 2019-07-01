@@ -41,7 +41,7 @@ import React from 'react';
 import YouTube from 'react-youtube';
 import io from 'socket.io-client';
  
-class Example extends React.Component {
+class VideoDetail extends React.Component {
 
   constructor(props){
     super(props);
@@ -156,5 +156,5 @@ class Example extends React.Component {
 
 }
 
-export default Example
+export default VideoDetail
 
