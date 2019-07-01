@@ -17,7 +17,7 @@ import ChatBubble from 'react-chat-bubble';
 import UserBar from "./user_bar.js";
 import Cam from './components/web-cam.js';
 
-const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
+const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 
 class FullRender extends Component {
   constructor(props) {

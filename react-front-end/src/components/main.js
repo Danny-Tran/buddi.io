@@ -8,7 +8,7 @@ class Main extends React.Component {
   		
   		<div className="appContainer">
         <div className="nav-bar">
-        <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
+        <a><img className="logo-img" src={require('../buddi.png')}/></a>
         </div>
         
   				
