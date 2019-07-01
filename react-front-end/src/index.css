@@ -19,6 +19,8 @@ code {
 }
 
 
+
+
 /*/////////////////////// NAV BAR COMPONENT /////////////////*/
 .nav-bar {
   display:flex;
@@ -88,7 +90,7 @@ code {
 /*//////////////////* VIDEO BAR CSS COPONENTS /////////////////////////*/
 .video-bar {
   width: 65%;
-  background-color: #48D1CC;
+  background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/3/59/I7HP9D.jpg');
 }
 
 .embed-responsive-item{ /* video frame */
@@ -119,6 +121,10 @@ code {
 }
 .video-detail_col-md-8{
   border:5px;
+}
+
+.media-heading{
+  color:white;
 }
 
 /*//////////////// CHAT BAR COPONENT CSS /////////////////////////*/

@@ -20,7 +20,7 @@ class VideoListItem extends Component {
           </div>
           <div className="media-body">
             <div className="media-heading" >
-              {title}
+              <strong>{title}</strong>
             </div>
           </div>
         </div>
