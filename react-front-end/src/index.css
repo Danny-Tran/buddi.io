@@ -18,7 +18,9 @@ code {
   flex-direction: row;
 }
 
-
+.appContainer{
+  background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/3/59/I7HP9D.jpg');
+}
 
 
 /*/////////////////////// NAV BAR COMPONENT /////////////////*/
@@ -50,7 +52,11 @@ code {
 /*//////////////////// USER BAR CSS COMPONENT ///////////////////////////*/
 .user-bar {
   width: 10%;
-  background-color: #FAF0E6;
+  /* border: 2px solid #dedede; */
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 .user-container {
@@ -90,7 +96,7 @@ code {
 /*//////////////////* VIDEO BAR CSS COPONENTS /////////////////////////*/
 .video-bar {
   width: 65%;
-  background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/3/59/I7HP9D.jpg');
+ 
 }
 
 .embed-responsive-item{ /* video frame */
@@ -115,22 +121,27 @@ code {
 }
 
 .col-md-4_list-group{ /*display all video in block */
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   width: 100%;
+  
 }
 .video-detail_col-md-8{
   border:5px;
 }
 
-.media-heading{
+.list-group-item{
+  width:100%
+}
+
+.media-heading{ /*video list name */
   color:white;
 }
 
 /*//////////////// CHAT BAR COPONENT CSS /////////////////////////*/
 .chat-bar {
   width: 25%;
-  background-color: #48D1CC;
+  
 }
 .card-body{
   padding: 10px;

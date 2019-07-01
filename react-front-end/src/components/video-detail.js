@@ -117,8 +117,10 @@ class Example extends React.Component {
         onPause={this._onPause}
         onPlay={this._onPlay(this.state.shouldSend)}
         // onStateChange={this._currentTime} 
+        
         />
     );
+      
   }
 
   _currentTime = (event) => {

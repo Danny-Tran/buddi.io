@@ -16,7 +16,7 @@ import Main from "./components/main.js";
 import ChatBubble from 'react-chat-bubble';
 import UserBar from "./user_bar.js";
 
-const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
+const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 
 class FullRender extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class FullRender extends Component {
 
   componentDidMount() {
     //this.socket = io('http://192.168.15.146:3000');
-    this.socket = io('192.168.15.153:3000');
+    this.socket = io('http://localhost:3000');
     this.videoSearch('dubai');
   }
 
