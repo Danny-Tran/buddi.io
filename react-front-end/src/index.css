@@ -25,23 +25,25 @@ code {
   flex-direction: row;
   height: 60px;
   background-color: #000000;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 .search-bar {
   /* padding: 5px 0 0 22em; */
   display: flex;
   flex-direction: row;
-   
+  padding: 0;
 } 
 .search-bar-img {
   display: inline-flex;
   float: left;
   padding: 10px 0 0 0;
-  width: 35px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 .logo-img{
-  width: 200px;
-  height: 80px;
+  padding: 10px 110px 10px 30px;
+  /*width: 200px;*/
+  height: 40px;
   margin: 0 5em 0 0;
 }
 
