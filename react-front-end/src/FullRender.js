@@ -19,7 +19,7 @@ import UserBar from "./user_bar.js";
 import Cam from './components/web-cam.js';
 import MyComponent from './components/emoji-bar.js';
 
-const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
+const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
 class FullRender extends Component {
   constructor(props) {
@@ -86,7 +86,7 @@ class FullRender extends Component {
 
           </div>
 
-          <footer>
+          <footer className='footer-full'>
                 <p>Contact: Lighthouse Labs</p>
                 
                 <p>Contact information: <a href="mailto:someone@example.com">buddiIo@gmail.com</a>.</p>

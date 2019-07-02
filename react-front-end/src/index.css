@@ -296,6 +296,9 @@ form {
 .footer-main{
   margin-top: 170px;
 }
+.footer-full{
+  background-color: lightgrey;
+}
 .typewriter  .ptag  {
   /* overflow: hidden; Ensures the content is not revealed until the animation */ 
   border-right: .15em red ; /* The typwriter cursor */
