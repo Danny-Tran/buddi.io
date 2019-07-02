@@ -10,6 +10,7 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.8",
+    "react-truncate": "^2.4.0",
     "react-webcam": "^1.1.1",
     "react-youtube": "^7.9.0",
     "youtube-api-search": "0.0.5"

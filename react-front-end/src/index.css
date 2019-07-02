@@ -92,14 +92,14 @@ code {
 
 /*//////////////////* VIDEO BAR CSS COPONENTS /////////////////////////*/
 .video-bar {
-  width: 65%;
+  /*width: 65%;*/
   /*background-color: #48D1CC;*/
 }
 
 .embed-responsive-item{ /* video frame */
   padding: 10px;
-  width: 98%;
-  height: 500px;
+  /*width: 98%;*/
+  /*height: 500px;*/
 }
 
 .search-bar input {
@@ -111,7 +111,7 @@ code {
 .video-list-media {
   margin: 16px;
   border: solid #0178e6 2px;
-  height: 250px;
+  height: 160px;
   width: 120px;
   padding: 5px;
   background-color: #FAF0E6;
