@@ -64,7 +64,7 @@ class FullRender extends Component {
 
           <div className = "parents">
 
-            <div className="user-bar"> Users
+            <div className="user-bar"> 
                <div> <UserBar socket={this.socket} /> </div>
             </div>
         
