@@ -60,7 +60,6 @@ class FullRender extends Component {
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
             <Link to="/"><button className="logout-button">Logout</button></Link>
-            <button onClick={this.popup} className="invite">Invite</button>
           </div>
 
           <div className = "parents">
