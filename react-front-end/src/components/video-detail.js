@@ -128,6 +128,7 @@ class VideoDetail extends React.Component {
         // this.props.video.snippet.title
         />
     );
+      
   }
 
   _currentTime = (event) => {

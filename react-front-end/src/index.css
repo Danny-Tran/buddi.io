@@ -19,6 +19,8 @@ code {
 }
 
 
+
+
 /*/////////////////////// NAV BAR COMPONENT /////////////////*/
 .nav-bar {
   display:flex;
@@ -53,47 +55,32 @@ code {
 /*//////////////////// USER BAR CSS COMPONENT ///////////////////////////*/
 .user-bar {
   width: 10%;
-  background-color: #FAF0E6;
+  /* border: 2px solid #dedede; */
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  height: 30em;
 }
 
-.user-container {
-	background-size: cover;
-  background: rgb(226,226,226); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
-  
+.users{
+  padding: 0 0 0 5px;
 }
-
-.led-box {
-  height: 30px;
-  width: 25%;
-  float: left;
-}
-
 
 .led-green {
   margin: auto;
   float: left;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   background-color: #ABFF00;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 5px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
 }
-
-
-
-
 
 /*//////////////////* VIDEO BAR CSS COPONENTS /////////////////////////*/
 .video-bar {
-  /*width: 65%;*/
-  /*background-color: #48D1CC;*/
+  width: 65%;
+ 
 }
 
 .embed-responsive-item{ /* video frame */
@@ -126,22 +113,31 @@ code {
 }
 
 .col-md-4_list-group{ /*display all video in block */
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   width: 100%;
+  
 }
 .video-detail_col-md-8{
   border:5px;
 }
 
+.list-group-item{
+  width:100%
+}
+
+.media-heading{ /*video list name */
+  color:white;
+}
+
 /*//////////////// CHAT BAR COPONENT CSS /////////////////////////*/
 .chat-bar {
   width: 25%;
-  /*background-color: #48D1CC;*/
+  
 }
 .card-body{
   padding: 10px;
-  height:47em;
+  height:25em;
   /* width:22%; */
   background-color: #FAF0E6;
   width: 96%;
