@@ -150,6 +150,7 @@ code {
   /* width:22%; */
   background-color: #FAF0E6;
   width: 96%;
+  overflow-y: scroll;
 }
 .card-footer{
   display: flex;
