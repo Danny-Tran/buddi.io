@@ -51,6 +51,18 @@ class FullRender extends Component {
     }
   }
 
+  popup = (mylink, windowname) => {
+  if (! window.focus)
+    return true;
+  var href;
+  if (typeof(mylink) == 'string')
+    href=mylink;
+  else 
+    href=mylink.href;
+  window.open(href, windowname, 'width=400,height=200,scrollbars=yes');
+  return false;
+}
+
   // fetchData = () => {
   //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
   //   .then((response) => {
@@ -73,17 +85,20 @@ class FullRender extends Component {
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
             <Link to="/"><button className="logout-button">Logout</button></Link>
-
+            <button onClick={this.popup} className="invite">Invite</button>
           </div>
+
           <div className = "parents">
+
             <div className="user-bar"> Users
                <div> <UserBar socket={this.socket} /> </div>
             </div>
         
             <div className="video-bar">
-            <div className="embed-responsive-item">
-              <VideoDetail video={this.state.selectedVideo} socket={this.socket} />
-            </div>
+              <div className="embed-responsive-item">
+                <VideoDetail video={this.state.selectedVideo} socket={this.socket} />
+              </div>
+
               <VideoList
                  onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                  videos={this.state.videos}
@@ -93,17 +108,16 @@ class FullRender extends Component {
             <div role="complimentary" className="chat-bar" > 
               <Chat_bar socket={this.socket} />
               <MyComponent />
-              
-          </div>         
-        </div>
+            </div>  
 
+          </div>
 
-            <footer>
+          <footer>
                 <p>Contact: Lighthouse Labs</p>
                 
                 <p>Contact information: <a href="mailto:someone@example.com">buddiIo@gmail.com</a>.</p>
                 <img src="https://img.icons8.com/clouds/60/000000/email.png"></img>
-            </footer>
+          </footer>
         </div>
     );
   }
