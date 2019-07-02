@@ -51,31 +51,6 @@ class FullRender extends Component {
     }
   }
 
-  popup = (mylink, windowname) => {
-  if (! window.focus)
-    return true;
-  var href;
-  if (typeof(mylink) == 'string')
-    href=mylink;
-  else 
-    href=mylink.href;
-  window.open(href, windowname, 'width=400,height=200,scrollbars=yes');
-  return false;
-}
-
-  // fetchData = () => {
-  //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log(response.data) // The entire response from the Rails API
-
-  //     console.log(response.data.message) // Just the message
-  //     this.setState({
-  //       message: response.data.message
-  //     });
-  //   }) 
-  // }
-
   render() {
     if (!this.socket) return null;
     return (
@@ -85,12 +60,11 @@ class FullRender extends Component {
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
             <Link to="/"><button className="logout-button">Logout</button></Link>
-            <button onClick={this.popup} className="invite">Invite</button>
           </div>
 
           <div className = "parents">
 
-            <div className="user-bar"> Users
+            <div className="user-bar"> 
                <div> <UserBar socket={this.socket} /> </div>
             </div>
         

@@ -31,8 +31,9 @@ class UserBar extends React.Component{
       return result
     }
     return (
-      
-        <div class="user-layout">
+      <div class="user-layout">
+      <div class="user-title">Users</div>
+        <hr/>
           <div class="user-container">
             <div class="led-box">
               {uniqueArray(users).map(user => (
