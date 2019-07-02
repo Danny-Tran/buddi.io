@@ -51,39 +51,28 @@ class FullRender extends Component {
     }
   }
 
-  // fetchData = () => {
-  //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log(response.data) // The entire response from the Rails API
-
-  //     console.log(response.data.message) // Just the message
-  //     this.setState({
-  //       message: response.data.message
-  //     });
-  //   }) 
-  // }
-
   render() {
     if (!this.socket) return null;
     return (
    
-        <div className="appContainer">
+        <div className="appContainer-full">
           <div className="nav-bar">
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
             <Link to="/"><button className="logout-button">Logout</button></Link>
-
           </div>
+
           <div className = "parents">
+
             <div className="user-bar"> Users
                <div> <UserBar socket={this.socket} /> </div>
             </div>
         
             <div className="video-bar">
-            <div className="embed-responsive-item">
-              <VideoDetail video={this.state.selectedVideo} socket={this.socket} />
-            </div>
+              <div className="embed-responsive-item">
+                <VideoDetail video={this.state.selectedVideo} socket={this.socket} />
+              </div>
+
               <VideoList
                  onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                  videos={this.state.videos}
@@ -93,9 +82,16 @@ class FullRender extends Component {
             <div role="complimentary" className="chat-bar" > 
               <Chat_bar socket={this.socket} />
               <MyComponent />
-              
-          </div>         
-        </div>
+            </div>  
+
+          </div>
+
+          <footer>
+                <p>Contact: Lighthouse Labs</p>
+                
+                <p>Contact information: <a href="mailto:someone@example.com">buddiIo@gmail.com</a>.</p>
+                <img src="https://img.icons8.com/clouds/60/000000/email.png"></img>
+          </footer>
         </div>
     );
   }

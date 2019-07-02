@@ -34,18 +34,15 @@ class UserBar extends React.Component{
       
         <div class="user-layout">
           <div class="user-container">
-           <div class="led-box">
-            
+            <div class="led-box">
               {uniqueArray(users).map(user => (
                 <div class="user-led">
-                  
-                    <p class="led-green">    </p>
+                  <div class="led">
+                    <p class="led-green"></p>
+                  </div>
                     <p class="users"> {user}</p>
-                  
-                </div>
-                ))
-              }
-             
+                </div>))
+              }             
             </div>
           </div>
         </div>

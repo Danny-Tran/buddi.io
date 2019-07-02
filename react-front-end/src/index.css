@@ -55,8 +55,8 @@ code {
 /*//////////////////// USER BAR CSS COMPONENT ///////////////////////////*/
 .user-bar {
   width: 10%;
-  border: 2px solid #0178e6; 
-  background-color: #f1f1f1;
+   border: 2px solid #0178e6; 
+  background-color: #FAF0E6;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
@@ -64,17 +64,25 @@ code {
 }
 
 .users{
-  padding: 0 0 0 5px;
+  padding: 0 0 0px 25px;
 }
 
 .led-green {
-  margin: auto;
-  float: left;
-  width: 13px;
-  height: 13px;
+  /* padding: 10px 0 10px 0; */
+  width: 10px;
+  height: 10px;
   background-color: #ABFF00;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 5px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+}
+
+.led{
+  padding-top: 5px;
+}
+
+.user-led {
+  display: inline-flex;
+  flex-direction: row;
 }
 
 /*//////////////////* VIDEO BAR CSS COPONENTS /////////////////////////*/
@@ -227,7 +235,7 @@ form {
   font-style: italic;
 }
 
-.typewriter h1, h2  {
+.typewriter h1, h2, .ptag  {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -284,6 +292,24 @@ form {
   font-family: Book Antiqua;
 }
 
+
+.footer-main{
+  margin-top: 170px;
+}
+.typewriter  .ptag  {
+  /* overflow: hidden; Ensures the content is not revealed until the animation */ 
+  border-right: .15em red ; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  font-family:Book Antiqua;
+  margin-bottom: 20px;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    
+}
+
 .logout-button {
   float: right;
   padding: 10px;
@@ -301,3 +327,9 @@ form {
   padding-left: 20px;
 }*/
 
+.appContainer-full{
+  background-image: url('https://i.ytimg.com/vi/v1SabYdIlZI/maxresdefault.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}

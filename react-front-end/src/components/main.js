@@ -24,10 +24,15 @@ class Main extends React.Component {
 									</div>
 									
 										<Link to="/main"><button className="button	">Create Your	Room</button></Link>
+
 										
 									</form>
 							</div>
 					</div>
+							<footer className='footer-main'>
+									<p className='ptag'>Contributed by: Peter, Danny, Gagan</p>
+									
+							</footer>
 				
 
         </div>
