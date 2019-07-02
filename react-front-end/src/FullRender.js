@@ -68,7 +68,7 @@ class FullRender extends Component {
     if (!this.socket) return null;
     return (
    
-        <div className="appContainer">
+        <div className="appContainer-full">
           <div className="nav-bar">
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
@@ -96,6 +96,14 @@ class FullRender extends Component {
               
           </div>         
         </div>
+
+
+            <footer>
+                <p>Contact: Lighthouse Labs</p>
+                
+                <p>Contact information: <a href="mailto:someone@example.com">buddiIo@gmail.com</a>.</p>
+                <img src="https://img.icons8.com/clouds/60/000000/email.png"></img>
+            </footer>
         </div>
     );
   }

@@ -213,7 +213,7 @@ form {
   font-style: italic;
 }
 
-.typewriter h1, h2  {
+.typewriter h1, h2, .ptag  {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -270,6 +270,24 @@ form {
   font-family: Book Antiqua;
 }
 
+
+.footer-main{
+  margin-top: 170px;
+}
+.typewriter  .ptag  {
+  /* overflow: hidden; Ensures the content is not revealed until the animation */ 
+  border-right: .15em red ; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  font-family:Book Antiqua;
+  margin-bottom: 20px;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    
+}
+
 .logout-button {
   float: right;
   padding: 12px;
@@ -287,3 +305,9 @@ form {
   padding-left: 20px;
 }
 
+.appContainer-full{
+  background-image: url('https://i.ytimg.com/vi/v1SabYdIlZI/maxresdefault.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
