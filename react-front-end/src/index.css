@@ -46,9 +46,9 @@ code {
   height: 36px;
 }
 .logo-img{
-  padding: 10px 150px 10px 30px;
+  padding: 10px 150px 10px 20px;
   /*width: 200px;*/
-  height: 40px;
+  height: 35px;
   margin: 0 5em 0 0;
 }
 
@@ -60,7 +60,7 @@ code {
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
-  height: 30em;
+  height: 36.7em;
 }
 
 .users{
@@ -139,13 +139,14 @@ code {
 }
 
 /*//////////////// CHAT BAR COPONENT CSS /////////////////////////*/
-.chat-bar {
+/*.chat-bar {
   width: 25%;
-  
-}
+
+  filter: blur(3px);
+}*/
 .card-body{
   padding: 10px;
-  height:25em;
+  height: 32.8em;
   /* width:22%; */
   background-color: #FAF0E6;
   width: 96%;
@@ -155,12 +156,25 @@ code {
   flex-direction: row;
 }
 .form-name{
-  width: 100px;
-  height: 45px;
+  width: 70px;
+  height: 35px;
+  border-color: #0178e6;
+  border-radius: 10px;
 }
 .form-message{
   width: 100%;
-  height: 45px;
+  height: 35px;
+/*  border-bottom-color: #0178e6;
+  border-top-color: #0178e6;*/
+  border-color: #0178e6;
+  border-radius: 10px;
+}
+
+.plane-button {
+  border: #0178e6 2px solid;
+  /*border-color: #0178e6;*/
+  background-color: #cfe7fc;
+  border-radius: 10px;
 }
 
 .container {
@@ -298,20 +312,20 @@ form {
 
 .logout-button {
   float: right;
-  padding: 12px;
+  padding: 10px;
   font-size:15px;
   background-color: #0178e6;
-  margin: 8px;
-  margin-left: 270px;
+  margin: 10px;
+  margin-left: 310px;
   border-radius: 10px;
   border-color: #0178e6;
   font-family: Book Antiqua;
 }
 
-.btn_btn-primary_form-control {
+/*.btn_btn-primary_form-control {
   background-image: url('plane.png');
   padding-left: 20px;
-}
+}*/
 
 .appContainer-full{
   background-image: url('https://i.ytimg.com/vi/v1SabYdIlZI/maxresdefault.jpg');
