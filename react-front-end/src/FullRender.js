@@ -21,6 +21,12 @@ import MyComponent from './components/emoji-bar.js';
 
 const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
+
+// const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
+// const API_KEY = 'AIzaSyAWozCjsQeq44RvaA-VPapn7tEb46ESRHY';
+
+
+
 class FullRender extends Component {
   constructor(props) {
     super(props)
@@ -64,7 +70,7 @@ class FullRender extends Component {
 
           <div className = "parents">
 
-            <div className="user-bar"> Users
+            <div className="user-bar"> 
                <div> <UserBar socket={this.socket} /> </div>
             </div>
         
