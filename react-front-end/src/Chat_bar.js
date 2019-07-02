@@ -80,7 +80,7 @@ sendMessage = ev => {
                           <br></br>
                           <input  type="text" placeholder="Message" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} className="form-message"/>
                           
-                          <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
+                          <button type="image" src="./plane.png" onClick={this.sendMessage} className="btn_btn-primary_form-control">Send</button>
                       </div>
                   </div>
     </div>

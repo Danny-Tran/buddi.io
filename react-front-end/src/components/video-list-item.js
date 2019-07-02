@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Truncate from 'react-truncate';
 
 class VideoListItem extends Component {
   constructor(props) {
@@ -19,9 +20,9 @@ class VideoListItem extends Component {
             <img className="media-object" src={imgUrl} />
           </div>
           <div className="media-body">
-            <div className="media-heading" >
-              <strong>{title}</strong>
-            </div>
+            <Truncate className="media-heading" lines={3}>
+              {title}
+            </Truncate>
           </div>
         </div>
           

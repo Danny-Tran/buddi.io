@@ -6,6 +6,7 @@ import axios from 'axios';
 import YTSearch from 'youtube-api-search';
 import Webcam from 'react-webcam';
 import io from "socket.io-client";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import SearchBar from './components/search-bar';
 import VideoDetail from './components/video-detail';
@@ -16,6 +17,7 @@ import Main from "./components/main.js";
 import ChatBubble from 'react-chat-bubble';
 import UserBar from "./user_bar.js";
 import Cam from './components/web-cam.js';
+import MyComponent from './components/emoji-bar.js';
 
 const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 
@@ -32,9 +34,9 @@ class FullRender extends Component {
   }
 
   componentDidMount() {
-    this.socket = io('http://192.168.15.153:3000');
-    // this.socket = io('http://localhost:3000');
-    this.videoSearch('dubai');
+    // this.socket = io('http://192.168.15.153:3000');
+    this.socket = io('http://localhost:3000');
+    this.videoSearch('NewYork');
   }
 
   videoSearch = (term) => {
@@ -70,6 +72,8 @@ class FullRender extends Component {
           <div className="nav-bar">
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
+            <Link to="/"><button className="logout-button">Logout</button></Link>
+
           </div>
           <div className = "parents">
             <div className="user-bar"> Users
@@ -88,13 +92,11 @@ class FullRender extends Component {
 
             <div role="complimentary" className="chat-bar" > 
               <Chat_bar socket={this.socket} />
+              <MyComponent />
               
           </div>         
         </div>
         </div>
-
-        
-
     );
   }
 }

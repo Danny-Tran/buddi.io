@@ -41,13 +41,14 @@ import React from 'react';
 import YouTube from 'react-youtube';
 import io from 'socket.io-client';
  
-class Example extends React.Component {
+class VideoDetail extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {
       id: this.props.video && this.props.video.id.videoId,
-      shouldSend: true
+      shouldSend: true,
+      title: this.props.video.snippet.title
     }
   }
 
@@ -105,7 +106,8 @@ class Example extends React.Component {
       height: '450',
       width: '810',
       playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 0
+        autoplay: 0,
+        title: this.props.video.snippet.title
       }
     };
     
@@ -123,7 +125,7 @@ class Example extends React.Component {
         onPause={this._onPause}
         onPlay={this._onPlay(this.state.shouldSend)}
         // onStateChange={this._currentTime} 
-        
+        // this.props.video.snippet.title
         />
     );
       
@@ -153,10 +155,10 @@ class Example extends React.Component {
     console.log("Play event", event.target.playVideo())
 
     event.target.pauseVideo();
-    console.log("EVENT",this.props.video.id.videoId)
+    console.log("EVENT",this.props.video.snippet.title)
   }
 
 }
 
-export default Example
+export default VideoDetail
 
