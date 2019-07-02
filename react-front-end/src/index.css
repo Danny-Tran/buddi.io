@@ -18,9 +18,7 @@ code {
   flex-direction: row;
 }
 
-.appContainer{
-  background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/3/59/I7HP9D.jpg');
-}
+
 
 
 /*/////////////////////// NAV BAR COMPONENT /////////////////*/
@@ -29,23 +27,26 @@ code {
   flex-direction: row;
   height: 60px;
   background-color: #000000;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
 .search-bar {
   /* padding: 5px 0 0 22em; */
   display: flex;
   flex-direction: row;
-   
+  padding: 0;
+  margin: 2px;
 } 
 .search-bar-img {
   display: inline-flex;
   float: left;
   padding: 10px 0 0 0;
-  width: 35px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 .logo-img{
-  width: 200px;
-  height: 80px;
+  padding: 10px 150px 10px 30px;
+  /*width: 200px;*/
+  height: 40px;
   margin: 0 5em 0 0;
 }
 
@@ -57,41 +58,22 @@ code {
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  height: 30em;
 }
 
-.user-container {
-	background-size: cover;
-  background: rgb(226,226,226); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
-  
+.users{
+  padding: 0 0 0 5px;
 }
-
-.led-box {
-  height: 30px;
-  width: 25%;
-  float: left;
-}
-
 
 .led-green {
   margin: auto;
   float: left;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   background-color: #ABFF00;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 5px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
 }
-
-
-
-
 
 /*//////////////////* VIDEO BAR CSS COPONENTS /////////////////////////*/
 .video-bar {
@@ -108,7 +90,7 @@ code {
 .search-bar input {
   margin: 10px;
   height: 30px;
-  width: 500px;
+  width: 400px;
 }
 
 .video-list-media {
@@ -145,7 +127,7 @@ code {
 }
 .card-body{
   padding: 10px;
-  height:47em;
+  height:25em;
   /* width:22%; */
   background-color: #FAF0E6;
   width: 96%;
@@ -194,4 +176,85 @@ code {
   
 }
 
+.table {
+  display:table;
+  text-align:center;
+  width:100%;
+  height:100%;
+  table-layout:fixed;
+}
+.cell {
+  margin-top: 150px;
+  
+  vertical-align:middle;
+}
+form {
+  display:inline-block;
+  border:1px solid black;
+  border-radius:10px;
+  width: 450px;
+  height:120px;
+  padding:50px 0;
+  background: blur(8px);
+  
+}
+.card-title{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: italic;
+}
+
+.typewriter h1, h2  {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  font-family:Book Antiqua;
+  margin-bottom: 20px;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+.appContainer{
+  /* background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/90/47/NeKqG2.jpg'); */
+  /* background-color: #71b3e9; */
+  background-image: linear-gradient(-90deg, red, white, yellow);
+  padding-bottom: 200px; 
+ 
+}
+.button{
+  padding: 15px;
+  font-size:15px;
+  background-color: #0178e6;
+  border-color: #0178e6;
+  margin-top: 30px;
+  border-radius: 10px;
+  font-family:Book Antiqua;
+
+}
+
+.login-button {
+  float: right;
+  padding: 12px;
+  font-size:15px;
+  background-color: #0178e6;
+  margin: 8px;
+  margin-left: 760px;
+  border-radius: 10px;
+  border-color: #0178e6;
+  font-family: Book Antiqua;
+}
 

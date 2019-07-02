@@ -15,6 +15,7 @@ import Chat_bar from "./Chat_bar.js";
 import Main from "./components/main.js";
 import ChatBubble from 'react-chat-bubble';
 import UserBar from "./user_bar.js";
+import Cam from './components/web-cam.js';
 
 const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 
@@ -31,8 +32,8 @@ class FullRender extends Component {
   }
 
   componentDidMount() {
-    //this.socket = io('http://192.168.15.146:3000');
-    this.socket = io('http://localhost:3000');
+    this.socket = io('http://192.168.15.153:3000');
+    // this.socket = io('http://localhost:3000');
     this.videoSearch('dubai');
   }
 
@@ -62,15 +63,12 @@ class FullRender extends Component {
   // }
 
   render() {
-    // const videoSearch = _.debounce(term => {
-    //   this.videoSearch(term);
-    // }, 300);
     if (!this.socket) return null;
     return (
    
         <div className="appContainer">
           <div className="nav-bar">
-            <a><img className="logo-img" src="https://getgreenline.co/wp-content/uploads/2018/08/Buddi_logo_blue_green.png"/></a>
+            <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
           </div>
           <div className = "parents">
@@ -90,6 +88,7 @@ class FullRender extends Component {
 
             <div role="complimentary" className="chat-bar" > 
               <Chat_bar socket={this.socket} />
+              
           </div>         
         </div>
         </div>

@@ -91,7 +91,13 @@ class Example extends React.Component {
       this.player.pauseVideo()
       console.log("ONPLAY FROM VIDEO DETAIL", data)
     })
+
+    
+    
   }
+ 
+
+  
 
   render() {
     

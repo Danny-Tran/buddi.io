@@ -19,12 +19,17 @@ io.on('connection',(socket) =>{
   socket.on('SEND_MESSAGE', function(data){
     io.emit('RECEIVE_MESSAGE', data);
   })
+  socket.on('disconnect', ()=> {
+    online--;
+    console.log(online);
+  });
 
   socket.on('state', (data) => {
   	
   	socket.broadcast.emit('onPause', data);
   	console.log('FROM BACKEND', data);
   })
+
 
   // socket.on('receive', (data) => {
   // 	if(data == 1) {
@@ -50,9 +55,15 @@ io.on('connection',(socket) =>{
   //   socket.broadcast.emit('seek_playVideo', data)
   //   console.log('Listening to PAUSE',data);
   // });
+  
+    // socket.broadcast.emit('userCount',{ userCount: online } );
+    // console.log(online);
+    
+
 
 
 })
+
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
