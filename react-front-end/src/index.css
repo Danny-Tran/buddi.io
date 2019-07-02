@@ -55,7 +55,7 @@ code {
 /*//////////////////// USER BAR CSS COMPONENT ///////////////////////////*/
 .user-bar {
   width: 10%;
-  /* border: 2px solid #dedede; */
+   border: 2px solid #0178e6; 
   background-color: #f1f1f1;
   border-radius: 5px;
   padding: 10px;
@@ -127,7 +127,7 @@ code {
 }
 
 .media-heading{ /*video list name */
-  color:white;
+  color: #0178e6;
 }
 
 /*//////////////// CHAT BAR COPONENT CSS /////////////////////////*/
