@@ -286,3 +286,8 @@ form {
   font-family: Book Antiqua;
 }
 
+.btn_btn-primary_form-control {
+  background-image: url('plane.png');
+  padding-left: 20px;
+}
+
