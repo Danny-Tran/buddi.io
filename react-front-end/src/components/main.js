@@ -8,6 +8,7 @@ class Main extends React.Component {
   		
   		<div className="appContainer">
         <div className="nav-bar">
+        <a><img className="logo-together" src={require('../together.png')}/></a>
         <a><img className="logo-img" src={require('../buddi.png')}/></a>
         <Link to="/main"><button className="login-button">Login</button></Link>
         </div>

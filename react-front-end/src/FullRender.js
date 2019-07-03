@@ -61,7 +61,8 @@ class FullRender extends Component {
    
         <div className="appContainer-full">
           <div className="nav-bar">
-            <a><img className="logo-img" src={require('./buddi.png')} /></a>
+            <a><img className="logo-together" src={require('./together.png')}/></a>
+            <a><img className="logo-img" src={require('./buddi.png')}/></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
             <Link to="/"><button className="logout-button">Logout</button></Link>
           </div>
