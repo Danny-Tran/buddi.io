@@ -70,6 +70,26 @@ class FullRender extends Component {
 
             <div className="user-bar"> 
                <div> <UserBar socket={this.socket} /> </div>
+               {this.state.webcamEnabled ? (
+                  <Webcam 
+                    // audio={false}
+                    height={120}
+                    ref={this.setRef}
+                    screenshotFormat="image/jpeg"
+                    width={120}
+                    onUserMedia={this.handleUserMedia}
+                  />
+              ) : (
+                <button type="button" onClick={this.turnOn}>
+                  Webcam On
+                </button>
+              )}
+
+              <button type="button" onClick={this.turnOff}>
+                  Turn Off
+              </button>
+
+              <video style={{ height: 100, width: 100 }} src={this.state.stream} />
             </div>
         
             <div className="video-bar">
