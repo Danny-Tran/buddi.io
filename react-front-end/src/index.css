@@ -280,6 +280,7 @@ form {
  
 }
 .button{
+  color:white;
   padding: 15px;
   font-size:15px;
   background-color: #0178e6;
@@ -306,6 +307,9 @@ form {
 .footer-main{
   margin-top: 230px;
 }
+.footer-full{
+  background-color: lightgrey;
+}
 .typewriter  .ptag  {
   /* overflow: hidden; Ensures the content is not revealed until the animation */ 
   border-right: .15em red ; /* The typwriter cursor */
@@ -321,14 +325,15 @@ form {
 }
 
 .logout-button {
+  color: white;
   float: right;
   padding: 10px;
   font-size:15px;
-  background-color: #0178e6;
+  background-color: red;
   margin: 10px;
-  margin-left: 285px;
+  /* margin-left: 220px; */
   border-radius: 10px;
-  border-color: #0178e6;
+  border-color: clear;
   font-family: Book Antiqua;
 }
 
@@ -343,3 +348,18 @@ form {
   background-size: cover;
 
 }
+.invite-button{
+  /* float: left; */
+  color: white;
+  padding: 10px;
+  font-size:15px;
+  background-color: #0178e6;
+  margin: 10px;
+  /* margin-left: 330px; */
+  border-radius: 10px;
+  border-color: white;
+  font-family: Book Antiqua;
+  margin-left: 220px;
+  /* margin-right: 50px; */
+}
+
