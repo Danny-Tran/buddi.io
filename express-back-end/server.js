@@ -11,7 +11,7 @@ let online = 0;
 io.on('connection',(socket) =>{
   console.log('SERVER MESSAGE')
   console.log(socket.id)
-  online++ ;
+  online = online + 1  ;
   
   io.sockets.emit('userCount', { userCount: online });
   console.log(online);
@@ -20,7 +20,9 @@ io.on('connection',(socket) =>{
     io.emit('RECEIVE_MESSAGE', data);
   })
   socket.on('disconnect', ()=> {
-    online--;
+    
+    online = online - 1  ;
+    io.sockets.emit('userCount', { userCount: online });
     console.log(online);
   });
 
