@@ -137,16 +137,16 @@ class FullRender extends Component {
 
             <div role="complimentary" className="chat-bar" > 
               <Chat_bar socket={this.socket} />
-              <MyComponent />
+              {/* <MyComponent /> */}
             </div>  
 
           </div>
 
           <footer className='footer-full'>
-                <p>Contact: Lighthouse Labs</p>
-                
-                <p>Contact information: <a href="mailto:someone@example.com">buddiIo@gmail.com</a>.</p>
-                <img src="https://img.icons8.com/clouds/60/000000/email.png"></img>
+                <span>Contact: Lighthouse Labs </span>
+                |     
+                <span> Email: <a href="mailto:someone@example.com">buddiIo@gmail.com</a>.</span>
+                {/* <img src="https://img.icons8.com/clouds/60/000000/email.png"></img> */}
           </footer>
         </div>
     );

@@ -10,7 +10,7 @@ class Main extends React.Component {
         <div className="nav-bar">
         <a><img className="logo-together" src={require('../together.png')}/></a>
         <a><img className="logo-img" src={require('../buddi.png')}/></a>
-        <Link to="/main"><button className="login-button">Login</button></Link>
+        <Link to="/room-4hvW"><button className="login-button">Login</button></Link>
         </div>
         
   				
@@ -24,7 +24,7 @@ class Main extends React.Component {
 											<span> chill together</span>
 									</div>
 									
-										<Link to="/main"><button className="button	">Create Your	Room</button></Link>
+										<Link to="/room-4hvW"><button className="button	">Create Your	Room</button></Link>
 
 										
 									</form>

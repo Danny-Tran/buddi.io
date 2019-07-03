@@ -19,7 +19,7 @@ class App extends Component {
       <BrowserRouter>
 
         <Route exact path="/" component={Main} />
-        <Route path="/main" component={FullRender} />
+        <Route path="/room-4hvW" component={FullRender} />
       </BrowserRouter>
     );
   }
