@@ -38,7 +38,8 @@ class FullRender extends Component {
 
   componentDidMount() {
     // this.socket = io('http://192.168.15.153:3000');
-    this.socket = io('http://localhost:3000');
+    this.socket = io('http://192.168.15.141:3000');
+    // this.socket = io('http://localhost:3000');
     this.videoSearch('NewYork');
   }
 
