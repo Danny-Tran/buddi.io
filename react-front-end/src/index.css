@@ -45,11 +45,16 @@ code {
   width: 36px;
   height: 36px;
 }
-.logo-img{
-  padding: 12px 150px 12px 12px;
+.logo-img {
+  padding: 12px 135px 12px 12px;
   /*width: 200px;*/
   height: 35px;
   margin: 0 5em 0 0;
+}
+
+.logo-together {
+  height: 35px;
+  padding: 12px 0px 12px 12px;
 }
 
 /*//////////////////// USER BAR CSS COMPONENT ///////////////////////////*/
@@ -291,7 +296,7 @@ form {
   font-size:15px;
   background-color: #0178e6;
   margin: 8px;
-  margin-left: 815px;
+  margin-left: 775px;
   border-radius: 10px;
   border-color: #0178e6;
   font-family: Book Antiqua;
@@ -321,7 +326,7 @@ form {
   font-size:15px;
   background-color: #0178e6;
   margin: 10px;
-  margin-left: 330px;
+  margin-left: 285px;
   border-radius: 10px;
   border-color: #0178e6;
   font-family: Book Antiqua;
