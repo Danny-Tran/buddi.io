@@ -46,7 +46,7 @@ code {
   height: 36px;
 }
 .logo-img{
-  padding: 10px 150px 10px 20px;
+  padding: 12px 150px 12px 12px;
   /*width: 200px;*/
   height: 35px;
   margin: 0 5em 0 0;
@@ -109,7 +109,7 @@ code {
 
 .video-list-media {
   margin: 16px;
-  border: solid #0178e6 1px;
+  border: solid #0178e6 2px;
   height: 160px;
   width: 120px;
   padding: 5px;
@@ -154,6 +154,7 @@ code {
   /* width:22%; */
   background-color: #FAF0E6;
   width: 96%;
+  overflow-y: scroll;
 }
 .card-footer{
   display: flex;
@@ -290,7 +291,7 @@ form {
   font-size:15px;
   background-color: #0178e6;
   margin: 8px;
-  margin-left: 760px;
+  margin-left: 815px;
   border-radius: 10px;
   border-color: #0178e6;
   font-family: Book Antiqua;
@@ -320,7 +321,7 @@ form {
   font-size:15px;
   background-color: #0178e6;
   margin: 10px;
-  margin-left: 310px;
+  margin-left: 330px;
   border-radius: 10px;
   border-color: #0178e6;
   font-family: Book Antiqua;
