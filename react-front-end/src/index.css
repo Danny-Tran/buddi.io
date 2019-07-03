@@ -46,7 +46,7 @@ code {
   height: 36px;
 }
 .logo-img {
-  padding: 12px 135px 12px 12px;
+  padding: 12px 125px 12px 12px;
   /*width: 200px;*/
   height: 35px;
   margin: 0 5em 0 0;
@@ -292,14 +292,39 @@ form {
 }
 
 .login-button {
+  color: white;
   float: right;
   padding: 12px;
   font-size:15px;
   background-color: #0178e6;
   margin: 8px;
-  margin-left: 775px;
+  margin-left: 785px;
   border-radius: 10px;
-  border-color: #0178e6;
+  border-color: white;
+  font-family: Book Antiqua;
+}
+
+.button-off {
+  color: white;
+  padding: 12px 27px 12px 27px;
+  font-size: 15px;
+  background-color: #0178e6;
+  margin: 7px;
+  
+  border-radius: 10px;
+  border-color: white;
+  font-family: Book Antiqua;
+}
+
+.button-on {
+  color: white;
+  padding: 12px 15px 12px 15px;
+  font-size: 15px;
+  background-color: #0178e6;
+  margin: 7px;
+  
+  border-radius: 10px;
+  border-color: white;
   font-family: Book Antiqua;
 }
 

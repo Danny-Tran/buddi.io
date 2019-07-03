@@ -36,7 +36,8 @@ class FullRender extends Component {
     this.state = {
       message: 'Click the button to load data!',
       videos: [],
-      selectedVideo: null
+      selectedVideo: null, 
+      webcamEnabled: false
     }
     this.debounceSearch = _.debounce(this.videoSearch, 600);
 
@@ -61,6 +62,26 @@ class FullRender extends Component {
     }
   }
 
+  handleUserMedia = (event) => {
+    console.log("usermedia", event);
+    console.log("This.webcam", this.webcam.stream)
+    // console.log("This.webcam", this.webcam.streaur)
+    this.setState({ stream: this.webcam.stream })
+    // this.socket.emit('webcam', this.webcam.stream)
+  }
+
+  turnOn = () => {
+    this.setState({ webcamEnabled: true });
+    // console.log("This.webcam", this.webcam.stream)
+    // this.socket.emit('webcam_connected', this.webcam.stream)
+  }
+  turnOff = () => this.setState({ webcamEnabled: false });
+
+
+  setRef = webcam => {
+    this.webcam = webcam;
+  };
+
   render() {
     if (!this.socket) return null;
     return (
@@ -70,7 +91,7 @@ class FullRender extends Component {
             <a><img className="logo-together" src={require('./together.png')}/></a>
             <a><img className="logo-img" src={require('./buddi.png')}/></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
-            <Popup trigger={<button className="invite-button">Invite +</button>}position="left" >
+            <Popup trigger={<button className="invite-button">Invite</button>}position="left" >
               <div>Add to room http://192.168.15.141</div>
             </Popup>
             <Link to="/"><button className="logout-button">Logout</button></Link>
@@ -81,6 +102,7 @@ class FullRender extends Component {
             <div className="user-bar"> 
                <div> <UserBar socket={this.socket} /> </div>
                {this.state.webcamEnabled ? (
+                  <div>
                   <Webcam 
                     // audio={false}
                     height={120}
@@ -89,15 +111,15 @@ class FullRender extends Component {
                     width={120}
                     onUserMedia={this.handleUserMedia}
                   />
+                  <button class="button-off" type="button" onClick={this.turnOff}>
+                    Turn Off
+                  </button>
+                  </div>
               ) : (
-                <button type="button" onClick={this.turnOn}>
+                <button class="button-on" type="button" onClick={this.turnOn}>
                   Webcam On
                 </button>
               )}
-
-              <button type="button" onClick={this.turnOff}>
-                  Turn Off
-              </button>
 
               <video style={{ height: 100, width: 100 }} src={this.state.stream} />
             </div>
