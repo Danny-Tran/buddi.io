@@ -18,6 +18,7 @@ import ChatBubble from 'react-chat-bubble';
 import UserBar from "./user_bar.js";
 import Cam from './components/web-cam.js';
 import MyComponent from './components/emoji-bar.js';
+import Popup from "reactjs-popup";
 
 const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
@@ -41,8 +42,8 @@ class FullRender extends Component {
 
   componentDidMount() {
     // this.socket = io('http://192.168.15.153:3000');
-    this.socket = io('http://192.168.15.141:3000');
-    // this.socket = io('http://localhost:3000');
+    // this.socket = io('http://192.168.15.141:3000');
+    this.socket = io('http://localhost:3000');
     this.videoSearch('NewYork');
   }
 
@@ -66,6 +67,9 @@ class FullRender extends Component {
           <div className="nav-bar">
             <a><img className="logo-img" src={require('./buddi.png')} /></a>
             <SearchBar onSearchTermChange={this.debounceSearch}/>
+            <Popup trigger={<button className="invite-button">Invite +</button>}position="left" >
+              <div>Add to room http://192.168.15.141</div>
+            </Popup>
             <Link to="/"><button className="logout-button">Logout</button></Link>
           </div>
 
