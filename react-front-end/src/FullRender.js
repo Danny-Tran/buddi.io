@@ -20,11 +20,13 @@ import Cam from './components/web-cam.js';
 import MyComponent from './components/emoji-bar.js';
 import Popup from "reactjs-popup";
 
-const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
+//const API_KEY = 'AIzaSyCbA7kPYhwuP9DIhxpxlTeZomZ0g3BBw8U';
 
-
-// const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
+//const API_KEY = 'AIzaSyBfEFfcK6P9vfXt3I_oTUBGf_TPNn4GvzI';
+const API_KEY = 'AIzaSyCohkXg4GyBE3Y2qMLAskM9fKovaLiLHQo';
+//const API_KEY = 'AIzaSyDUeRFXqsnKAJp30XCoQOhksFTJ4PVN4ck';
 // const API_KEY = 'AIzaSyAWozCjsQeq44RvaA-VPapn7tEb46ESRHY';
+
 
 
 
