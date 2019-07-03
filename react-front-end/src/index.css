@@ -215,6 +215,7 @@ code {
 }
 .message-content{
   font-family: monospace;
+  /* overflow-wrap: break-word; */
   
 }
 

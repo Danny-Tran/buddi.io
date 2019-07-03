@@ -59,10 +59,10 @@ sendMessage = ev => {
               {this.state.messages.map(message => {
                 return (
                   <div className="container">
-                  
                   <img src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="Avatar"></img>
-                  <div className='author-name'>{message.author}</div>
                   <span class="time-right">{new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) }</span>
+                  <div className='author-name'>{message.author}</div>
+                  
                     <div className='message-content'> {message.message}</div>
                   </div>
                 )
